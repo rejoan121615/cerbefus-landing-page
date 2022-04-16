@@ -37,6 +37,29 @@ $yellow-light: #fff279;
     width: $w;
     height: $w;
 }
+// font function 
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
 
 // module
 %heading-1 {
@@ -46,14 +69,17 @@ $yellow-light: #fff279;
     line-height: 110%;
     text-transform: uppercase;
     color: white;
-    font-size: 60px;
+    // font-size: 60px;
+    @include fluid-type( 320px, $xl, 32px, 60px);
 }
 
 %subtitle {
     font-family: $ubuntu;
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    @include fluid-type(320px, $xl, 17px, 24px);
+    // font-size: 18px;
+    // font-size: 24px;
     line-height: 140%;
     color: #ffffff;
 }
@@ -62,7 +88,9 @@ $yellow-light: #fff279;
     font-family: $ubuntu;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    @include fluid-type( 320px, $xl, 14px, 16px);
+    // font-size: 14px;
+    // font-size: 16px;
     line-height: 18px;
     text-transform: capitalize;
     color: white;
@@ -72,7 +100,8 @@ $yellow-light: #fff279;
     font-family: $mont;
     font-style: normal;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 25px;
+    // font-size: 48px;
     line-height: 110%;
     /* identical to box height, or 53px */
     text-transform: uppercase;
@@ -83,7 +112,8 @@ $yellow-light: #fff279;
     font-family: $ubuntu;
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
+    // font-size: 20px;
     line-height: 140%;
     color: white;
 }
@@ -305,6 +335,18 @@ h2.section-title {
     //--------------------- main section  -------------------
     main {
         .container {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            @include resp($xl) {
+                // padding-top: 125px;
+                padding-top: 100px;
+            }
+            @include resp ($xxl) {
+                // padding-top: 150px;
+            }
+            @include resp ($mxl) {
+                padding-top: 150px;
+            }
             .section-wrap {
                 display: flex;
                 flex-flow: column wrap;
@@ -316,16 +358,26 @@ h2.section-title {
                     grid-area: content;
                     order: 2;
                     @include resp($xl) {
-                        width: 60%;
+                        width: 65%;
                         order: 1;
                     }
                     .main-section-header {
+                        padding-top: 25px;
+                        @include resp ($xl) {
+                            padding-top: 0px;
+                        }
                         h1 {
                             @extend %heading-1;
                         }
                     }
-                    p {
+                    .para {
                         @extend %subtitle;
+                        padding-top: 20px;
+                        padding-bottom: 40px;
+                        @include resp ($sm) {
+                            display: flex;
+                            flex-flow: column wrap;
+                        }
                     }
                 }
                 // main section logo
@@ -334,13 +386,16 @@ h2.section-title {
                     text-align: center;
                     width: 100%;
                     @include resp($xl) {
-                        width: 40%;
+                        width: 35%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
                     }
                     img {
                         width: 70%;
                         max-width: 325px;
                         @include resp($xl) {
-                            width: 100%;
+                            width: 110%;
                             max-width: 503px;
                         }
                     }
@@ -352,6 +407,9 @@ h2.section-title {
                 justify-content: center;
                 align-items: center;
                 column-gap: 20px;
+                @include resp ($mxl) {
+                    padding-top: 30px;
+                }
             }
         }
     }
@@ -523,7 +581,9 @@ h2.section-title {
             margin-left: auto;
             margin-right: auto;
             text-align: center;
+            padding-bottom: 40px;
             @include resp($lg) {
+                padding-bottom: 60px;
             }
         }
 
@@ -556,7 +616,7 @@ footer {
     }
     @include resp ($xxl) {
         background-size: 100% 100%;
-        padding-top: 160px;
+        padding-top: 170px;
     }
     .container {
         .footer-wrap {

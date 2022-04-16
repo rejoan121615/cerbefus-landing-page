@@ -11,33 +11,69 @@
   line-height: 110%;
   text-transform: uppercase;
   color: white;
-  font-size: 60px;
+}
+#main main .container .section-wrap .main-all-content .main-section-header h1 {
+  font-size: 32px;
+}
+@media screen and (min-width: 320px) {
+  #main main .container .section-wrap .main-all-content .main-section-header h1 {
+    font-size: calc(32px + 28 * ((100vw - 320px) / 880));
+  }
+}
+@media screen and (min-width: 1200px) {
+  #main main .container .section-wrap .main-all-content .main-section-header h1 {
+    font-size: 60px;
+  }
 }
 
-#join-cerberus .container .para, #main main .container .section-wrap .main-all-content p {
+#join-cerberus .container .para, #main main .container .section-wrap .main-all-content .para {
   font-family: "Ubuntu", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
   line-height: 140%;
   color: #ffffff;
+}
+#join-cerberus .container .para, #main main .container .section-wrap .main-all-content .para {
+  font-size: 17px;
+}
+@media screen and (min-width: 320px) {
+  #join-cerberus .container .para, #main main .container .section-wrap .main-all-content .para {
+    font-size: calc(17px + 7 * ((100vw - 320px) / 880));
+  }
+}
+@media screen and (min-width: 1200px) {
+  #join-cerberus .container .para, #main main .container .section-wrap .main-all-content .para {
+    font-size: 24px;
+  }
 }
 
 #main header .nav-wrap .nav .nav-item a p {
   font-family: "Ubuntu", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
   line-height: 18px;
   text-transform: capitalize;
   color: white;
+}
+#main header .nav-wrap .nav .nav-item a p {
+  font-size: 14px;
+}
+@media screen and (min-width: 320px) {
+  #main header .nav-wrap .nav .nav-item a p {
+    font-size: calc(14px + 2 * ((100vw - 320px) / 880));
+  }
+}
+@media screen and (min-width: 1200px) {
+  #main header .nav-wrap .nav .nav-item a p {
+    font-size: 16px;
+  }
 }
 
 h2.section-title {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 25px;
   line-height: 110%;
   /* identical to box height, or 53px */
   text-transform: uppercase;
@@ -260,6 +296,20 @@ img {
   width: 24px;
   height: 24px;
 }
+#main main .container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+@media only screen and (min-width: 1200px) {
+  #main main .container {
+    padding-top: 100px;
+  }
+}
+@media only screen and (min-width: 1800px) {
+  #main main .container {
+    padding-top: 150px;
+  }
+}
 #main main .container .section-wrap {
   display: flex;
   flex-flow: column wrap;
@@ -275,8 +325,26 @@ img {
 }
 @media only screen and (min-width: 1200px) {
   #main main .container .section-wrap .main-all-content {
-    width: 60%;
+    width: 65%;
     order: 1;
+  }
+}
+#main main .container .section-wrap .main-all-content .main-section-header {
+  padding-top: 25px;
+}
+@media only screen and (min-width: 1200px) {
+  #main main .container .section-wrap .main-all-content .main-section-header {
+    padding-top: 0px;
+  }
+}
+#main main .container .section-wrap .main-all-content .para {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+@media only screen and (min-width: 576px) {
+  #main main .container .section-wrap .main-all-content .para {
+    display: flex;
+    flex-flow: column wrap;
   }
 }
 #main main .container .section-wrap .main-highlight-img {
@@ -286,7 +354,10 @@ img {
 }
 @media only screen and (min-width: 1200px) {
   #main main .container .section-wrap .main-highlight-img {
-    width: 40%;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 }
 #main main .container .section-wrap .main-highlight-img img {
@@ -295,7 +366,7 @@ img {
 }
 @media only screen and (min-width: 1200px) {
   #main main .container .section-wrap .main-highlight-img img {
-    width: 100%;
+    width: 110%;
     max-width: 503px;
   }
 }
@@ -304,6 +375,11 @@ img {
   justify-content: center;
   align-items: center;
   column-gap: 20px;
+}
+@media only screen and (min-width: 1800px) {
+  #main main .container .btn-wrap {
+    padding-top: 30px;
+  }
 }
 
 #about {
@@ -453,6 +529,12 @@ img {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  padding-bottom: 40px;
+}
+@media only screen and (min-width: 992px) {
+  #join-cerberus .container .para {
+    padding-bottom: 60px;
+  }
 }
 #join-cerberus .container .btn-wrap .btn-fill {
   background-color: #ffc800;
@@ -486,7 +568,7 @@ footer {
 @media only screen and (min-width: 1400px) {
   footer {
     background-size: 100% 100%;
-    padding-top: 160px;
+    padding-top: 170px;
   }
 }
 footer .container .footer-wrap .footer-top {
