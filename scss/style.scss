@@ -582,6 +582,9 @@ footer {
                 }
                 img {
                     width: 80px;
+                    @include resp ($sm) {
+                        width: 115px;
+                    }
                     @include resp($md) {
                         width: 140px;
                     }
@@ -602,6 +605,9 @@ footer {
                         text-decoration: none;
                         img {
                             width: 45px;
+                            @include resp ($sm) {
+                                width: 55px;
+                            }
                             @include resp($md) {
                                 width: 70px;
                             }
@@ -611,6 +617,9 @@ footer {
                         &:last-child {
                             img {
                                 width: 48px;
+                                @include resp ($sm) {
+                                    width: 60px;
+                                }
                                 @include resp($md) {
                                     width: 81px;
                                 }

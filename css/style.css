@@ -521,6 +521,11 @@ footer .container .footer-wrap .footer-top {
 footer .container .footer-wrap .footer-top img {
   width: 80px;
 }
+@media only screen and (min-width: 576px) {
+  footer .container .footer-wrap .footer-top img {
+    width: 115px;
+  }
+}
 @media only screen and (min-width: 768px) {
   footer .container .footer-wrap .footer-top img {
     width: 140px;
@@ -544,6 +549,11 @@ footer .container .footer-wrap .footer-top .icons a {
 footer .container .footer-wrap .footer-top .icons a img {
   width: 45px;
 }
+@media only screen and (min-width: 576px) {
+  footer .container .footer-wrap .footer-top .icons a img {
+    width: 55px;
+  }
+}
 @media only screen and (min-width: 768px) {
   footer .container .footer-wrap .footer-top .icons a img {
     width: 70px;
@@ -551,6 +561,11 @@ footer .container .footer-wrap .footer-top .icons a img {
 }
 footer .container .footer-wrap .footer-top .icons li:last-child img {
   width: 48px;
+}
+@media only screen and (min-width: 576px) {
+  footer .container .footer-wrap .footer-top .icons li:last-child img {
+    width: 60px;
+  }
 }
 @media only screen and (min-width: 768px) {
   footer .container .footer-wrap .footer-top .icons li:last-child img {
