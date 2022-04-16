@@ -121,17 +121,16 @@ img {
     width: 100%;
 }
 
-section {
+.full-container {
     background-color: $red;
 }
 
 %btn {
     font-family: $ubuntu;
-    width: 151px;
-    height: 40px;
+    min-width: 151px;
+    padding: 11px 41px;
     background: #ffffff;
     border-radius: 15px;
-    display: inline-block;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -139,13 +138,15 @@ section {
     text-align: center;
     text-transform: uppercase;
     text-decoration: none;
-    display: flex;
-    align-items: center;
+    display: inline-flex;
     justify-content: center;
-
+    align-items: center;
     /* black */
-
     color: #000000;
+    svg {
+        margin-right: 5px;
+        width: 22px;
+    }
 }
 
 .btn-fill {
@@ -168,6 +169,10 @@ section {
 
 h2.section-title {
     @extend %heading-2;
+}
+
+.btn-wrap {
+    text-align: center;
 }
 
 // heading style --------------------------------
@@ -441,8 +446,8 @@ h2.section-title {
                 }
                 .img {
                     width: 250px;
-                    
-                    @include resp ($sm) {
+
+                    @include resp($sm) {
                         width: 143px;
                         position: relative;
                     }
@@ -455,7 +460,7 @@ h2.section-title {
                     }
                     .line {
                         display: none;
-                        @include resp ($sm) {
+                        @include resp($sm) {
                             display: block;
                             width: 4px;
                             position: absolute;
@@ -506,7 +511,124 @@ h2.section-title {
     .container {
         .section-title {
             text-align: center;
-            
+            background: linear-gradient(180deg, #80ff00 0%, #fef38c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .para {
+            @extend %subtitle;
+            max-width: 770px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            @include resp($lg) {
+            }
+        }
+
+        .btn-wrap {
+            .btn-fill {
+                background-color: #ffc800;
+            }
+        }
+    }
+}
+
+// footer section -------------------
+footer {
+    padding-bottom: 25px;
+    background: $red url("../img/footer/footer-bg.png") no-repeat center bottom;
+    background-size: cover;
+    padding-top: 100px;
+    @include resp($md) {
+        background-size: 120% 100%;
+        padding-top: 125px;
+    }
+    @include resp($lg) {
+        padding-bottom: 31px;
+        background-size: 110% 100%;
+        padding-top: 140px;
+    }
+    @include resp ($xl) {
+        background-size: 105% 100%;
+        padding-top: 150px;
+    }
+    @include resp ($xxl) {
+        background-size: 100% 100%;
+        padding-top: 160px;
+    }
+    .container {
+        .footer-wrap {
+            .footer-top {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                row-gap: 25px;
+                flex-flow: column wrap;
+                @include resp(450px) {
+                    flex-flow: row wrap;
+                    justify-content: space-between;
+                }
+                @include resp($md) {
+                    display: grid;
+                    grid-template-columns: 1fr 2fr;
+                }
+                @include resp ($xl) {
+                    grid-template-columns: 1fr 1.75fr;
+                }
+                @include resp ($xxl) {
+                    grid-template-columns: 1.2fr 2fr;
+                }
+                img {
+                    width: 80px;
+                    @include resp($md) {
+                        width: 140px;
+                    }
+                }
+                .icons {
+                    list-style: none;
+                    display: flex;
+                    flex-flow: row wrap;
+                    column-gap: 20px;
+                    @include resp ($lg) {
+                        column-gap: 50px;
+                    }
+                    // @include resp ($xl) {
+                    //     column-gap: 80px;
+                    // }
+                    a {
+                        display: inline-block;
+                        text-decoration: none;
+                        img {
+                            width: 45px;
+                            @include resp($md) {
+                                width: 70px;
+                            }
+                        }
+                    }
+                    li {
+                        &:last-child {
+                            img {
+                                width: 48px;
+                                @include resp($md) {
+                                    width: 81px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        p.para {
+            text-align: center;
+            font-family: $ubuntu;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140%;
+            color: #ffffff;
+            margin-top: 10px;
         }
     }
 }

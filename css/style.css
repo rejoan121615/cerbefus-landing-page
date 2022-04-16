@@ -14,7 +14,7 @@
   font-size: 60px;
 }
 
-#main main .container .section-wrap .main-all-content p {
+#join-cerberus .container .para, #main main .container .section-wrap .main-all-content p {
   font-family: "Ubuntu", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -91,17 +91,16 @@ img {
   width: 100%;
 }
 
-section {
+.full-container {
   background-color: #a41115;
 }
 
 .btn-outline, .btn-fill {
   font-family: "Ubuntu", sans-serif;
-  width: 151px;
-  height: 40px;
+  min-width: 151px;
+  padding: 11px 41px;
   background: #ffffff;
   border-radius: 15px;
-  display: inline-block;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -109,11 +108,15 @@ section {
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  display: flex;
-  align-items: center;
+  display: inline-flex;
   justify-content: center;
+  align-items: center;
   /* black */
   color: #000000;
+}
+.btn-outline svg, .btn-fill svg {
+  margin-right: 5px;
+  width: 22px;
 }
 
 .btn-outline {
@@ -127,6 +130,10 @@ section {
 
 #main img {
   width: initial;
+}
+
+.btn-wrap {
+  text-align: center;
 }
 
 #main {
@@ -435,6 +442,130 @@ section {
 
 #join-cerberus .container .section-title {
   text-align: center;
+  background: linear-gradient(180deg, #80ff00 0%, #fef38c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+#join-cerberus .container .para {
+  max-width: 770px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+#join-cerberus .container .btn-wrap .btn-fill {
+  background-color: #ffc800;
+}
+
+footer {
+  padding-bottom: 25px;
+  background: #a41115 url("../img/footer/footer-bg.png") no-repeat center bottom;
+  background-size: cover;
+  padding-top: 100px;
+}
+@media only screen and (min-width: 768px) {
+  footer {
+    background-size: 120% 100%;
+    padding-top: 125px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  footer {
+    padding-bottom: 31px;
+    background-size: 110% 100%;
+    padding-top: 140px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  footer {
+    background-size: 105% 100%;
+    padding-top: 150px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  footer {
+    background-size: 100% 100%;
+    padding-top: 160px;
+  }
+}
+footer .container .footer-wrap .footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  row-gap: 25px;
+  flex-flow: column wrap;
+}
+@media only screen and (min-width: 450px) {
+  footer .container .footer-wrap .footer-top {
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 768px) {
+  footer .container .footer-wrap .footer-top {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  footer .container .footer-wrap .footer-top {
+    grid-template-columns: 1fr 1.75fr;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  footer .container .footer-wrap .footer-top {
+    grid-template-columns: 1.2fr 2fr;
+  }
+}
+footer .container .footer-wrap .footer-top img {
+  width: 80px;
+}
+@media only screen and (min-width: 768px) {
+  footer .container .footer-wrap .footer-top img {
+    width: 140px;
+  }
+}
+footer .container .footer-wrap .footer-top .icons {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 20px;
+}
+@media only screen and (min-width: 992px) {
+  footer .container .footer-wrap .footer-top .icons {
+    column-gap: 50px;
+  }
+}
+footer .container .footer-wrap .footer-top .icons a {
+  display: inline-block;
+  text-decoration: none;
+}
+footer .container .footer-wrap .footer-top .icons a img {
+  width: 45px;
+}
+@media only screen and (min-width: 768px) {
+  footer .container .footer-wrap .footer-top .icons a img {
+    width: 70px;
+  }
+}
+footer .container .footer-wrap .footer-top .icons li:last-child img {
+  width: 48px;
+}
+@media only screen and (min-width: 768px) {
+  footer .container .footer-wrap .footer-top .icons li:last-child img {
+    width: 81px;
+  }
+}
+footer .container p.para {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #ffffff;
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
