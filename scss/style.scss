@@ -386,7 +386,7 @@ h2.section-title {
             max-width: 1040px;
             margin-left: auto;
             margin-right: auto;
-            @include resp ($md) {
+            @include resp($md) {
                 grid-template-columns: repeat(3, 1fr);
             }
             & > div {
@@ -396,7 +396,6 @@ h2.section-title {
 
                 img {
                     width: 200px;
-                
                 }
                 h4 {
                     font-family: "Montserrat";
@@ -410,6 +409,104 @@ h2.section-title {
                     max-width: 324px;
                 }
             }
+        }
+    }
+}
+
+// project roadmap --------------------
+#project-roadmap {
+    .container {
+        .section-title {
+            text-align: center;
+        }
+        // roadmap section
+        .roadmap {
+            list-style: none;
+            @include resp($sm) {
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            li {
+                display: flex;
+                flex-flow: column wrap;
+                align-items: center;
+                margin-bottom: 60px;
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+                @include resp($sm) {
+                    flex-flow: row wrap;
+                    column-gap: 30px;
+                }
+                .img {
+                    width: 250px;
+                    
+                    @include resp ($sm) {
+                        width: 143px;
+                        position: relative;
+                    }
+                    img {
+                        width: 100%;
+                        @include resp($sm) {
+                            position: relative;
+                            z-index: 100;
+                        }
+                    }
+                    .line {
+                        display: none;
+                        @include resp ($sm) {
+                            display: block;
+                            width: 4px;
+                            position: absolute;
+                            left: 50%;
+                            bottom: -70px;
+                            z-index: 90;
+                        }
+                    }
+                }
+                div {
+                    h4 {
+                        font-family: $ubuntu;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 28px;
+                        line-height: 140%;
+                        color: #ffffff;
+                    }
+                    h6 {
+                        font-family: $ubuntu;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 20px;
+                        line-height: 140%;
+                        text-transform: uppercase;
+                        color: #fff279;
+                    }
+                    .estimate {
+                        font-family: $ubuntu;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 20px;
+                        line-height: 140%;
+                        text-transform: capitalize;
+                        color: white;
+                        span {
+                            color: #fff279;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// join cerberus ---------------------------
+#join-cerberus {
+    .container {
+        .section-title {
+            text-align: center;
+            
         }
     }
 }

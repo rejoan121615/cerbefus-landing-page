@@ -344,4 +344,97 @@ section {
   max-width: 324px;
 }
 
+#project-roadmap .container .section-title {
+  text-align: center;
+}
+#project-roadmap .container .roadmap {
+  list-style: none;
+}
+@media only screen and (min-width: 576px) {
+  #project-roadmap .container .roadmap {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+#project-roadmap .container .roadmap li {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin-bottom: 60px;
+}
+#project-roadmap .container .roadmap li:last-child {
+  margin-bottom: 0px;
+}
+@media only screen and (min-width: 576px) {
+  #project-roadmap .container .roadmap li {
+    flex-flow: row wrap;
+    column-gap: 30px;
+  }
+}
+#project-roadmap .container .roadmap li .img {
+  width: 250px;
+}
+@media only screen and (min-width: 576px) {
+  #project-roadmap .container .roadmap li .img {
+    width: 143px;
+    position: relative;
+  }
+}
+#project-roadmap .container .roadmap li .img img {
+  width: 100%;
+}
+@media only screen and (min-width: 576px) {
+  #project-roadmap .container .roadmap li .img img {
+    position: relative;
+    z-index: 100;
+  }
+}
+#project-roadmap .container .roadmap li .img .line {
+  display: none;
+}
+@media only screen and (min-width: 576px) {
+  #project-roadmap .container .roadmap li .img .line {
+    display: block;
+    width: 4px;
+    position: absolute;
+    left: 50%;
+    bottom: -70px;
+    z-index: 90;
+  }
+}
+#project-roadmap .container .roadmap li div h4 {
+  font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 140%;
+  color: #ffffff;
+}
+#project-roadmap .container .roadmap li div h6 {
+  font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #fff279;
+}
+#project-roadmap .container .roadmap li div .estimate {
+  font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: capitalize;
+  color: white;
+}
+#project-roadmap .container .roadmap li div .estimate span {
+  color: #fff279;
+}
+
+#join-cerberus .container .section-title {
+  text-align: center;
+}
+
 /*# sourceMappingURL=style.css.map */
