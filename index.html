@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!-- google fonts  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Ubuntu:wght@400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <!-- style  -->
+        <link rel="stylesheet" href="./css/style.css" />
+    </head>
+    <body>
+        <!-- main section  -->
+        <div id="main">
+            <!-- header  -->
+            <header>
+                <div class="container">
+                    <!-- logo  -->
+                    <div class="logo">
+                        <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 255 59">
+                            <g filter="url(#a)" fill="#fff">
+                                <path d="M33.936 11.076h-2.232v3.587H29.01V11h-2.233v3.663h-4.772c-2.386 0-4.157.534-5.311 1.526-1.155.993-1.694 2.519-1.694 4.427v9.54c0 1.983.539 3.433 1.694 4.425 1.154.993 2.925 1.527 5.31 1.527h4.773v3.816h2.233v-3.816h2.694V40h2.232v-3.892h6.774v-5.19H22.852c-.693 0-1.155-.152-1.463-.381-.308-.23-.462-.534-.462-.992l-.077-1.68v-5.112l.077-1.756c0-.305.154-.61.462-.84.308-.228.77-.304 1.463-.304H40.71v-5.266h-6.774v-3.51Zm9.084 3.587v21.445h23.708V31.07H49.793v-3.51h15.934v-4.35H49.793v-3.587h16.935v-4.96H43.019ZM88.743 28.4c1.308 0 2.386-.153 3.233-.382a4.693 4.693 0 0 0 2.078-1.22c.539-.535.924-1.298 1.155-2.137.23-.916.385-1.985.385-3.282s-.154-2.366-.462-3.282c-.308-.84-.77-1.526-1.386-2.06-.616-.534-1.462-.84-2.463-1.069-1-.229-2.31-.305-3.772-.305H69.576v21.445h6.774V20.005h10.545c.693 0 1.232.23 1.77.61.463.382.77.917.77 1.603 0 .764-.23 1.298-.77 1.68-.538.38-1.077.61-1.77.61h-9.699l13.01 11.676h7.466l-8.852-7.631V28.4h-.077Zm35.947-2.442c-.461-.305-.923-.534-1.385-.61-.462-.077-.847-.153-1.232-.153v-.077c.231 0 .462-.076.847-.152.385-.076.77-.306 1.155-.687.384-.305.769-.84 1.077-1.526.308-.687.462-1.603.462-2.672 0-1.22-.231-2.213-.693-2.976-.462-.763-1-1.297-1.77-1.679a5.847 5.847 0 0 0-2.232-.687 27.126 27.126 0 0 0-2.695-.152h-19.09v21.445h19.09c1.386 0 2.464-.077 3.464-.23.924-.152 1.771-.381 2.464-.763a3.963 3.963 0 0 0 1.693-1.831c.385-.84.616-1.908.616-3.205 0-1.069-.154-1.908-.462-2.595-.462-.61-.847-1.145-1.309-1.45ZM105.6 19.47h11.778c.462 0 .846.153 1.231.534.308.306.462.763.462 1.298 0 .61-.154 1.068-.539 1.373-.385.306-.769.535-1.231.535H105.6v-3.74Zm13.625 11.142c-.308.305-.77.458-1.308.458h-12.24v-3.663h12.24c.538 0 1 .152 1.308.458.308.305.462.763.462 1.297.077.687-.077 1.145-.462 1.45Zm9.314-15.949v21.445h23.786V31.07h-17.012v-3.51h15.934v-4.35h-15.934v-3.587h17.012v-4.96h-23.786ZM174.34 28.4c1.308 0 2.386-.153 3.233-.382a4.697 4.697 0 0 0 2.078-1.22c.539-.535.924-1.298 1.155-2.137.231-.916.385-1.985.385-3.282s-.154-2.366-.462-3.282c-.308-.84-.77-1.526-1.386-2.06-.616-.534-1.462-.84-2.463-1.069-1.001-.229-2.309-.305-3.772-.305h-17.935v21.445h6.774V20.005h10.699c.693 0 1.232.23 1.771.61.462.382.769.917.769 1.603 0 .764-.23 1.298-.769 1.68-.539.38-1.078.61-1.771.61h-9.699l13.009 11.676h7.467l-8.852-7.631V28.4h-.231Zm30.251.534c0 .382-.154.763-.539.992-.384.23-.923.382-1.77.382h-9.545c-.77 0-1.309-.153-1.693-.382-.385-.229-.539-.61-.539-.992v-14.27h-6.62v15.262c0 .992.077 1.756.308 2.442.231.687.615 1.298 1.231 1.908.616.534 1.155.916 1.54 1.221.462.23 1 .458 1.77.61.693.154 1.694.23 3.002.23 1.309 0 3.233.076 5.85.076 2.618 0 4.619 0 5.851-.076 1.308 0 2.309-.153 3.002-.23.692-.152 1.308-.304 1.693-.533.385-.23.924-.687 1.54-1.221.615-.61 1-1.221 1.231-1.908.231-.687.308-1.527.308-2.442V14.739h-6.62v14.195Zm34.485-3.587c-.846-1.373-2.232-2.06-4.233-2.213-.385 0-.847-.076-1.463-.076-.616 0-1.309-.076-2.155-.076-.847 0-2.386-.077-4.619-.153-1.616-.076-2.54-.076-2.925-.076h-1.154c-.847 0-1.54-.077-2.079-.306-.462-.229-.77-.686-.77-1.373 0-.382.077-.687.231-.916.154-.23.385-.382.616-.534.231-.153.539-.23.847-.23.308 0 .616-.076 1.001-.076h16.703v-4.655h-20.321c-2.002 0-3.464.534-4.311 1.68-.847 1.144-1.309 2.747-1.309 4.96 0 1.831.308 3.129.924 4.044.847 1.221 2.309 1.908 4.388 1.984.385 0 .923.077 1.462.077.539 0 1.155.076 1.848.076.616 0 2.232.076 4.772.153 1.617.076 2.617.076 2.925.076.539 0 1.078 0 1.463.076a3.1 3.1 0 0 1 1.154.23c.385.152.693.305.924.61.231.229.308.61.308 1.068 0 .382-.077.687-.231.916-.154.23-.385.382-.693.534-.308.153-.538.23-.923.23-.308 0-.693.076-1.078.076h-16.473v4.655h19.552c2.309 0 3.926-.534 5.003-1.526 1.001-1.069 1.54-2.748 1.54-5.037 0-1.68-.308-3.053-.924-4.198Z"/>
+                            </g>
+                            <defs>
+                                <filter id="a" x="0" y="0" width="255" height="59" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                                <feOffset dy="4"/>
+                                <feGaussianBlur stdDeviation="7.5"/>
+                                <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.21 0"/>
+                                <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_204_39"/>
+                                <feBlend in="SourceGraphic" in2="effect1_dropShadow_204_39" result="shape"/>
+                                </filter>
+                            </defs>
+                        </svg>
+                    </div>
+                    <!-- navbar button  -->
+                    <div id="resp-nav-btn">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <!-- navbar  -->
+                    <div class="nav-wrap">
+                        <nav class="nav">
+                            <ul>
+                                <!-- nav item  -->
+                                <li class="nav-item">
+                                    <a href="">
+                                        <img
+                                            src="./img/nav-icons/about.svg"
+                                            alt="about icon"
+                                        />
+                                        <p>about</p>
+                                    </a>
+                                </li>
+                                <!-- nav item  -->
+                                <li class="nav-item">
+                                    <a href="">
+                                        <img
+                                            src="./img/nav-icons/benefit.svg"
+                                            alt="benefit icon"
+                                        />
+                                        <p>benefits</p>
+                                    </a>
+                                </li>
+                                <!-- nav item  -->
+                                <li class="nav-item">
+                                    <a href="">
+                                        <img
+                                            src="./img/nav-icons/roadmap.svg"
+                                            alt="roadmap icon"
+                                        />
+                                        <p>roadmap</p>
+                                    </a>
+                                </li>
+                                <!-- nav item  -->
+                                <li class="nav-item">
+                                    <a href="">
+                                        <img
+                                            src="./img/nav-icons/faq.svg"
+                                            alt="faq icon"
+                                        />
+                                        <p>faq</p>
+                                    </a>
+                                </li>
+                                <!-- nav item  -->
+                                <li class="nav-item">
+                                    <a href="">
+                                        <img
+                                            src="./img/nav-icons/community.svg"
+                                            alt="community icon"
+                                        />
+                                        <p>community</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <!-- social bar  -->
+                        <div class="social-bar">
+                            <ul>
+                                <!-- social item  -->
+                                <li>
+                                    <a href="">
+                                        <img
+                                            src="./img/social/off/akar-icons_twitter-fill.svg"
+                                            alt="twitter icon"
+                                        />
+                                    </a>
+                                </li>
+                                <!-- social item  -->
+                                <li>
+                                    <a href="">
+                                        <img
+                                            src="./img/social/off/bxl_telegram.svg"
+                                            alt="telegram icon"
+                                        />
+                                    </a>
+                                </li>
+                                <!-- social item  -->
+                                <li>
+                                    <a href="">
+                                        <img
+                                            src="./img/social/off/akar-icons_github-fill.svg"
+                                            alt="github icon"
+                                        />
+                                    </a>
+                                </li>
+                                <!-- social item  -->
+                                <li>
+                                    <a href="">
+                                        <img
+                                            src="./img/social/off/akar-icons_discord-fill.svg"
+                                            alt="discord icon"
+                                        />
+                                    </a>
+                                </li>
+                                <!-- social item  -->
+                                <li>
+                                    <a href="">
+                                        <img
+                                            src="./img/social/off/bi_medium.svg"
+                                            alt="medium icon"
+                                        />
+                                    </a>
+                                </li>
+
+                                <!-- social item  -->
+                                <li>
+                                    <a href="">
+                                        <img
+                                            src="./img/social/off/ion_documents.svg"
+                                            alt="document icon"
+                                        />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!--------------------- main section ------------------------ -->
+            <main>
+                <div class="container">
+                    <div class="section-wrap">
+                        <!-- main section content  -->
+                        <div class="main-all-content">
+                            <div class="main-section-header">
+                                <h1>The first-ever three</h1>
+                                <h1>headed canine</h1>
+                                <h1>meme-coin</h1>
+                            </div>
+                            <!-- paragraph  -->
+                            <p class="para">
+                                Cerberus will be a community lead meme-coin that
+                                will allow the community to vote on various
+                                proposals on the future use of the coin
+                            </p>
+                        </div>
+                        <!-- main section logo  -->
+                        <div class="main-highlight-img">
+                            <img src="./img/main-section/right-highlight-img.png" alt="logo" />
+                        </div>
+                    </div>
+                    <!-- buttons  -->
+                    <div class="btn-wrap">
+                        <a href="" class="btn-fill"> buy </a>
+                        <a href="" class="btn-outline"> CoinGecko </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!------------- about section ---------->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Cerberus</h2>
+                <div class="content-wrap">
+                    <!-- contents  -->
+                    <div class="contents">
+                        <p class="para">
+                            Introducting <span>Cerberus</span>
+                            <i>(pronounced - [ kur-ber-uhs])</i> the first ever
+                            three headed dog meme-coin in
+                            <span>Cosmos network.</span>
+                        </p>
+                        <p class="para">
+                            Cerberus will be a community lead meme-coin that
+                            will allow the community to vote on various
+                            proposals on the future use of the coin. The
+                            community can gain value from the coin by staking
+                            Cerberus ($CRBRUS) with delegators and liquidity
+                            pools.
+                        </p>
+                        <div class="para">
+                            Follow us on Twitter for future updates in the
+                            coming weeks
+                        </div>
+                    </div>
+                    <!-- btn  -->
+                    <div class="btn-wrap">
+                        <a href="" class="btn-fill">
+                            <span>Follow us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!------------ crbrus benefits  ------------>
+        <section id="crbrus-benefits">
+            <div class="container">
+                <h2 class="section-title">$CRBRUS BENEFITS</h2>
+                <div class="card-wrap">
+                    <!-- cards  -->
+                    <div>
+                        <img
+                            src="./img/crbrus-benefits/lower-fees.png"
+                            alt="lower fees icon"
+                        />
+                        <h4>lower fees</h4>
+                    </div>
+                    <!-- cards  -->
+                    <div>
+                        <img
+                            src="./img/crbrus-benefits/cheaper-purchase.png"
+                            alt="cheaper purchase icon"
+                        />
+                        <h4>Cheaper to purchase</h4>
+                    </div>
+                    <!-- cards  -->
+                    <div>
+                        <img
+                            src="./img/crbrus-benefits/unique-concept.png"
+                            alt="unique concept icon"
+                        />
+                        <h4>Unique concepts of a three-headed dog meme-coin</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!------------ project roadmap  ------------->
+        <section id="project-roadmap">
+            <div class="container">
+                <h1 class="section-title">Project roadmap</h1>
+                <ul class="roadmap">
+                    <li>
+                        <div class="img">
+                            <img
+                                src="./img/project-roadmap/roadmap-icons.png"
+                                alt="roadmap icon"
+                            />
+                        </div>
+                        <div class="">
+                            <h4>project launch</h4>
+                            <h6>. done</h6>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img">
+                            <img
+                                src="./img/project-roadmap/airdrops-duahua.png"
+                                alt="airdrop-huahua icon"
+                            />
+                        </div>
+                        <div class="">
+                            <h4>Airdrops to HUAHUA</h4>
+                            <p class="estimate">
+                                <span>estimated date</span>: 2022 May 17
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img">
+                            <img
+                                src="./img/project-roadmap/airdrops-osmo.png"
+                                alt="airdrop-osmo icon"
+                            />
+                        </div>
+                        <div class="">
+                            <h4>Airdrops to OSMO</h4>
+                            <p class="estimate">
+                                <span>estimated date</span>: 2022 May 28
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img">
+                            <img
+                                src="./img/project-roadmap/airdrops-atom.png"
+                                alt="airdrop-atom icon"
+                            />
+                        </div>
+                        <div class="">
+                            <h4>Airdrops to ATOM</h4>
+                            <p class="estimate">
+                                <span>estimated date</span>: 2022 June 7
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="img">
+                            <img
+                                src="./img/project-roadmap/NFT-project.png"
+                                alt="NFT project icon"
+                            />
+                        </div>
+                        <div class="">
+                            <h4>Launch NFT Project</h4>
+                            <p class="estimate">
+                                <span>estimated date</span>: 2022 June 18
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!------------ join cerberus  -------------->
+        <section id="join-cerberus">
+            <div class="container">
+                <h1 class="section-title">join Cerberus twitter community</h1>
+                <p class="para">
+                    Join our Twitter Community Chat where you will receive early
+                    news, early invitations, automatically have high ranks.
+                </p>
+                <div class="btn-wrap">
+                    <a href="" class="btn-fill">
+                        <svg
+                            width="22"
+                            height="18"
+                            viewBox="0 0 22 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M22 2.13513C21.191 2.49594 20.3219 2.73973 19.4082 2.84992C20.3509 2.28218 21.0562 1.38861 21.3925 0.33596C20.5068 0.865461 19.5374 1.23817 18.5265 1.43789C17.8467 0.707364 16.9462 0.22316 15.965 0.0604525C14.9837 -0.102255 13.9766 0.0656378 13.0999 0.538065C12.2231 1.01049 11.5259 1.76102 11.1164 2.67313C10.7069 3.58523 10.6081 4.60789 10.8353 5.58232C9.04057 5.49162 7.28485 5.02214 5.68208 4.20432C4.07931 3.38651 2.66531 2.23865 1.53184 0.835242C1.14428 1.5081 0.921431 2.28823 0.921431 3.11906C0.920998 3.86701 1.104 4.60349 1.45421 5.26318C1.80442 5.92286 2.311 6.48535 2.92901 6.90073C2.21228 6.87778 1.51137 6.68287 0.884612 6.33221V6.39072C0.88454 7.43974 1.24508 8.45648 1.90505 9.26841C2.56502 10.0803 3.48377 10.6375 4.50542 10.8453C3.84054 11.0264 3.14346 11.053 2.46684 10.9233C2.75508 11.8259 3.31656 12.6152 4.07267 13.1807C4.82878 13.7462 5.74166 14.0595 6.68352 14.0769C5.08466 15.3402 3.11008 16.0254 1.07742 16.0224C0.71736 16.0225 0.357601 16.0013 0 15.959C2.06326 17.2941 4.46505 18.0027 6.918 18C15.2215 18 19.7609 11.0783 19.7609 5.07523C19.7609 4.8802 19.756 4.68322 19.7473 4.48819C20.6302 3.84553 21.3924 3.04973 21.9981 2.13805L22 2.13513Z"
+                                fill="#05263E"
+                            />
+                        </svg>
+                        <p>follow us</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!------------ footer section  ------------->
+        <footer>
+            <div class="container">
+                <div class="logo">
+                    <div class="box">
+                        <!-- logo  -->
+                        <img src="./img/footer/logo.png" alt="logo icon" />
+                        <!-- three icons  -->
+                        <ul>
+                            <li>
+                                <img
+                                    src="./img/footer/k-icon.png"
+                                    alt="k icon"
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="./img/footer/rotate.png"
+                                    alt="rotate icon"
+                                />
+                            </li>
+                            <li>
+                                <img
+                                    src="./img/footer/dymention.png"
+                                    alt="dymention icon"
+                                />
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="para">© 2022 Cerberus. All Rights Reserved</p>
+                </div>
+            </div>
+        </footer>
+        <!-- js file  -->
+        <script src="./js/script.js"></script>
+    </body>
+</html>

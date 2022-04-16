@@ -1,0 +1,415 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// responsive
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+$mxl: 1800px;
+
+// fonts
+$mont: "Montserrat", sans-serif;
+$ubuntu: "Ubuntu", sans-serif;
+
+// colors
+$white: #fff;
+$black: #000000;
+$blue-white: #05263e;
+$yellow: #ffd600;
+$red: #a41115;
+$yellow-light: #fff279;
+
+// mixing
+@mixin resp($width) {
+    @media only screen and (min-width: $width) {
+        @content;
+    }
+}
+
+// width and height
+@mixin wh($w) {
+    width: $w;
+    height: $w;
+}
+
+// module
+%heading-1 {
+    font-family: $mont;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    text-transform: uppercase;
+    color: white;
+    font-size: 60px;
+}
+
+%subtitle {
+    font-family: $ubuntu;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 140%;
+    color: #ffffff;
+}
+
+%navigation {
+    font-family: $ubuntu;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: capitalize;
+    color: white;
+}
+
+%heading-2 {
+    font-family: $mont;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 110%;
+    /* identical to box height, or 53px */
+    text-transform: uppercase;
+    color: white;
+}
+
+%para {
+    font-family: $ubuntu;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    color: white;
+}
+// generate container
+$width-lists: (
+    $sm: 540px,
+    $md: 720px,
+    $lg: 960px,
+    $xl: 1140px,
+    $xxl: 1320px,
+    // $mxl: 1680px,
+);
+
+@each $screen, $width in $width-lists {
+    .container {
+        @include resp($screen) {
+            max-width: $width;
+        }
+    }
+}
+
+// common style
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    @include resp($sm) {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+img {
+    width: 100%;
+}
+
+section {
+    background-color: $red;
+}
+
+%btn {
+    font-family: $ubuntu;
+    width: 151px;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 15px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* black */
+
+    color: #000000;
+}
+
+.btn-fill {
+    @extend %btn;
+}
+
+.btn-outline {
+    @extend %btn;
+    background-color: transparent;
+    color: white;
+    font-weight: 500;
+    font-style: normal;
+    border: 2px solid white;
+    text-transform: none;
+}
+
+#main img {
+    width: initial;
+}
+
+h2.section-title {
+    @extend %heading-2;
+}
+
+// heading style --------------------------------
+#main {
+    background: transparent url("../img/main-section/main-sec-bg.jpg") no-repeat
+        center center;
+    background-size: 100% 100%;
+    min-height: 100vh;
+    height: 100%;
+    //---------------------- header section  -----------------
+    header {
+        padding-top: 15px;
+        @include resp($lg) {
+            padding-top: 30px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            @include resp($xl) {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+        // logo
+        .logo {
+            text-align: left;
+            width: 80%;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            svg {
+                max-width: 225px;
+                @include resp($xl) {
+                    max-width: 256px;
+                }
+            }
+        }
+        // navbar button
+        #resp-nav-btn {
+            width: 35px;
+            height: 25px;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.5s;
+            @include resp($xl) {
+                display: none;
+            }
+            .bar {
+                width: 100%;
+                height: 3px;
+                border-radius: 12px;
+                background-color: $white;
+            }
+            &:hover {
+                .bar {
+                    background-color: $yellow;
+                }
+            }
+        }
+        // navbar
+        .nav-wrap {
+            display: flex;
+            flex-flow: column wrap;
+            display: none;
+            @include resp($xl) {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+            }
+            .nav,
+            .social-bar {
+                ul {
+                    display: flex;
+                    list-style: none;
+                }
+            }
+            // nav
+            .nav {
+                ul {
+                    column-gap: 30px;
+                    @include resp($xxl) {
+                        column-gap: 40px;
+                    }
+                    @include resp($mxl) {
+                        column-gap: 50px;
+                    }
+                }
+                .nav-item {
+                    a {
+                        display: flex;
+                        text-decoration: none;
+                        align-items: center;
+                        img {
+                            @include wh(14px);
+                            margin-right: 5px;
+                        }
+                        p {
+                            @extend %navigation;
+                        }
+                    }
+                }
+            }
+
+            // social bar
+            .social-bar {
+                ul {
+                    column-gap: 10px;
+                    @include resp($xxl) {
+                        column-gap: 20px;
+                    }
+                    @include resp($mxl) {
+                        column-gap: 30px;
+                    }
+                    li {
+                        a {
+                            display: block;
+                            img {
+                                @include wh(24px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //--------------------- main section  -------------------
+    main {
+        .container {
+            .section-wrap {
+                display: flex;
+                flex-flow: column wrap;
+                @include resp($xl) {
+                    flex-flow: row wrap;
+                }
+
+                .main-all-content {
+                    grid-area: content;
+                    order: 2;
+                    @include resp($xl) {
+                        width: 60%;
+                        order: 1;
+                    }
+                    .main-section-header {
+                        h1 {
+                            @extend %heading-1;
+                        }
+                    }
+                    p {
+                        @extend %subtitle;
+                    }
+                }
+                // main section logo
+                .main-highlight-img {
+                    order: 1;
+                    text-align: center;
+                    width: 100%;
+                    @include resp($xl) {
+                        width: 40%;
+                    }
+                    img {
+                        width: 70%;
+                        max-width: 325px;
+                        @include resp($xl) {
+                            width: 100%;
+                            max-width: 503px;
+                        }
+                    }
+                }
+            }
+            // buttons
+            .btn-wrap {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                column-gap: 20px;
+            }
+        }
+    }
+}
+
+// about section ------------------------------
+#about {
+    height: 100vh;
+    @include resp($xl) {
+        // height: 100vh;
+    }
+    .container {
+        .section-title {
+            text-align: center;
+        }
+
+        .content-wrap {
+            display: flex;
+            flex-flow: column wrap;
+
+            .contents {
+            }
+        }
+    }
+}
+
+// ------------ crbrus benefits  ------------
+#crbrus-benefits {
+    .container {
+        .section-title {
+            text-align: center;
+        }
+        // card wrap
+        .card-wrap {
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 1040px;
+            margin-left: auto;
+            margin-right: auto;
+            @include resp ($md) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            & > div {
+                display: flex;
+                flex-flow: column wrap;
+                align-items: center;
+
+                img {
+                    width: 200px;
+                
+                }
+                h4 {
+                    font-family: "Montserrat";
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 26px;
+                    line-height: 110%;
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: #ffffff;
+                    max-width: 324px;
+                }
+            }
+        }
+    }
+}
