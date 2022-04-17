@@ -37,28 +37,37 @@ $yellow-light: #fff279;
     width: $w;
     height: $w;
 }
-// font function 
+// font function
 @function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+    @return $value / ($value * 0 + 1);
 }
 
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
-  $u1: unit($min-vw);
-  $u2: unit($max-vw);
-  $u3: unit($min-font-size);
-  $u4: unit($max-font-size);
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
 
-  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-    & {
-      font-size: $min-font-size;
-      @media screen and (min-width: $min-vw) {
-        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-      }
-      @media screen and (min-width: $max-vw) {
-        font-size: $max-font-size;
-      }
+    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+        & {
+            font-size: $min-font-size;
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(
+                    #{$min-font-size} + #{strip-unit(
+                            $max-font-size - $min-font-size
+                        )} *
+                        (
+                            (100vw - #{$min-vw}) / #{strip-unit(
+                                    $max-vw - $min-vw
+                                )}
+                        )
+                );
+            }
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+            }
+        }
     }
-  }
 }
 
 // module
@@ -70,7 +79,7 @@ $yellow-light: #fff279;
     text-transform: uppercase;
     color: white;
     // font-size: 60px;
-    @include fluid-type( 320px, $xl, 32px, 60px);
+    @include fluid-type(320px, $xl, 32px, 60px);
 }
 
 %subtitle {
@@ -88,7 +97,7 @@ $yellow-light: #fff279;
     font-family: $ubuntu;
     font-style: normal;
     font-weight: 400;
-    @include fluid-type( 320px, $xl, 14px, 16px);
+    @include fluid-type(320px, $xl, 14px, 16px);
     // font-size: 14px;
     // font-size: 16px;
     line-height: 18px;
@@ -100,7 +109,8 @@ $yellow-light: #fff279;
     font-family: $mont;
     font-style: normal;
     font-weight: 700;
-    font-size: 25px;
+    @include fluid-type(320px, $xl, 25px, 48px);
+    // font-size: 25px;
     // font-size: 48px;
     line-height: 110%;
     /* identical to box height, or 53px */
@@ -113,9 +123,14 @@ $yellow-light: #fff279;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    // font-size: 20px;
     line-height: 140%;
     color: white;
+    @include resp($sm) {
+        font-size: 18px;
+    }
+    @include resp($md) {
+        font-size: 20px;
+    }
 }
 // generate container
 $width-lists: (
@@ -227,6 +242,9 @@ h2.section-title {
                 display: grid;
                 grid-template-columns: 1fr 2fr;
             }
+            @include resp($xxl) {
+                grid-template-columns: 1fr 2.3fr;
+            }
         }
         // logo
         .logo {
@@ -290,9 +308,6 @@ h2.section-title {
                     @include resp($xxl) {
                         column-gap: 40px;
                     }
-                    @include resp($mxl) {
-                        column-gap: 50px;
-                    }
                 }
                 .nav-item {
                     a {
@@ -317,9 +332,7 @@ h2.section-title {
                     @include resp($xxl) {
                         column-gap: 20px;
                     }
-                    @include resp($mxl) {
-                        column-gap: 30px;
-                    }
+
                     li {
                         a {
                             display: block;
@@ -341,10 +354,10 @@ h2.section-title {
                 // padding-top: 125px;
                 padding-top: 100px;
             }
-            @include resp ($xxl) {
+            @include resp($xxl) {
                 // padding-top: 150px;
             }
-            @include resp ($mxl) {
+            @include resp($mxl) {
                 padding-top: 150px;
             }
             .section-wrap {
@@ -363,7 +376,7 @@ h2.section-title {
                     }
                     .main-section-header {
                         padding-top: 25px;
-                        @include resp ($xl) {
+                        @include resp($xl) {
                             padding-top: 0px;
                         }
                         h1 {
@@ -374,7 +387,7 @@ h2.section-title {
                         @extend %subtitle;
                         padding-top: 20px;
                         padding-bottom: 40px;
-                        @include resp ($sm) {
+                        @include resp($sm) {
                             display: flex;
                             flex-flow: column wrap;
                         }
@@ -407,7 +420,7 @@ h2.section-title {
                 justify-content: center;
                 align-items: center;
                 column-gap: 20px;
-                @include resp ($mxl) {
+                @include resp($mxl) {
                     padding-top: 30px;
                 }
             }
@@ -416,12 +429,78 @@ h2.section-title {
 }
 
 // about section ------------------------------
-#about {
-    height: 100vh;
-    @include resp($xl) {
-        // height: 100vh;
+#about-cerberus {
+    // height: 100vh;
+    background: transparent url("../img/about-cerberus/section-bg.png")
+        no-repeat center center;
+    background-size: 100% 100%;
+    @include resp($md) {
+        position: relative;
     }
+    // left side animation
+    #about-cerberus-animation {
+        display: none;
+        @include resp($md) {
+            display: block;
+            position: absolute;
+            left: -50px;
+            top: 0px;
+            width: 650px;
+        }
+        @include resp($lg) {
+            width: 630px;
+        }
+        @include resp($xl) {
+            left: 0px;
+            width: 735px;
+        }
+        @include resp($xxl) {
+            width: 780px;
+        }
+        img {
+            position: absolute;
+        }
+        .about-img {
+            left: 0px;
+            top: 0px;
+        }
+        .cerberus {
+            left: 190px;
+            width: 30%;
+            top: 215px;
+
+            @include resp($lg) {
+                left: 180px;
+                width: 35%;
+                top: 180px;
+            }
+            @include resp($xl) {
+                left: 210px;
+                width: 270px;
+                top: 195px;
+            }
+            @include resp($xxl) {
+                width: 292px;
+                left: 225px;
+                top: 205px;
+            }
+        }
+    }
+    // container
     .container {
+        padding-top: 80px;
+        padding-bottom: 100px;
+        @include resp($lg) {
+            padding-bottom: 130px;
+        }
+        @include resp($xl) {
+            padding-top: 100px;
+            padding-bottom: 160px;
+        }
+        @include resp($xxl) {
+            padding-top: 120px;
+            padding-bottom: 190px;
+        }
         .section-title {
             text-align: center;
         }
@@ -429,8 +508,51 @@ h2.section-title {
         .content-wrap {
             display: flex;
             flex-flow: column wrap;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            @include resp($md) {
+                width: 55%;
+                margin-left: auto;
+            }
+            @include resp($lg) {
+                padding-top: 0px;
+                padding-bottom: 0px;
+            }
 
             .contents {
+                @include resp($lg) {
+                    margin-top: 60px;
+                }
+                .para {
+                    @extend %para;
+                    margin-bottom: 10px;
+                    &:last-child {
+                        margin-bottom: 0px;
+                    }
+                    @include resp($md) {
+                        font-size: 18px;
+                        margin-bottom: 15px;
+                    }
+                    @include resp($xl) {
+                        font-size: 20px;
+                        margin-bottom: 20px;
+                        max-width: 625px;
+                    }
+                    span {
+                        color: $yellow;
+                        font-weight: 700;
+                    }
+                }
+            }
+            // btn
+            .btn-wrap {
+                margin-top: 30px;
+                @include resp($md) {
+                    text-align: left;
+                }
+                @include resp($lg) {
+                    margin-top: 68px;
+                }
             }
         }
     }
@@ -610,11 +732,11 @@ footer {
         background-size: 110% 100%;
         padding-top: 140px;
     }
-    @include resp ($xl) {
+    @include resp($xl) {
         background-size: 105% 100%;
         padding-top: 150px;
     }
-    @include resp ($xxl) {
+    @include resp($xxl) {
         background-size: 100% 100%;
         padding-top: 170px;
     }
@@ -634,15 +756,15 @@ footer {
                     display: grid;
                     grid-template-columns: 1fr 2fr;
                 }
-                @include resp ($xl) {
+                @include resp($xl) {
                     grid-template-columns: 1fr 1.75fr;
                 }
-                @include resp ($xxl) {
+                @include resp($xxl) {
                     grid-template-columns: 1.2fr 2fr;
                 }
                 img {
                     width: 80px;
-                    @include resp ($sm) {
+                    @include resp($sm) {
                         width: 115px;
                     }
                     @include resp($md) {
@@ -654,7 +776,7 @@ footer {
                     display: flex;
                     flex-flow: row wrap;
                     column-gap: 20px;
-                    @include resp ($lg) {
+                    @include resp($lg) {
                         column-gap: 50px;
                     }
                     // @include resp ($xl) {
@@ -665,7 +787,7 @@ footer {
                         text-decoration: none;
                         img {
                             width: 45px;
-                            @include resp ($sm) {
+                            @include resp($sm) {
                                 width: 55px;
                             }
                             @include resp($md) {
@@ -677,7 +799,7 @@ footer {
                         &:last-child {
                             img {
                                 width: 48px;
-                                @include resp ($sm) {
+                                @include resp($sm) {
                                     width: 60px;
                                 }
                                 @include resp($md) {

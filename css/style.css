@@ -17,7 +17,12 @@
 }
 @media screen and (min-width: 320px) {
   #main main .container .section-wrap .main-all-content .main-section-header h1 {
-    font-size: calc(32px + 28 * ((100vw - 320px) / 880));
+    font-size: calc(
+                    32px + 28 *
+                        (
+                            (100vw - 320px) / 880
+                        )
+                );
   }
 }
 @media screen and (min-width: 1200px) {
@@ -38,7 +43,12 @@
 }
 @media screen and (min-width: 320px) {
   #join-cerberus .container .para, #main main .container .section-wrap .main-all-content .para {
-    font-size: calc(17px + 7 * ((100vw - 320px) / 880));
+    font-size: calc(
+                    17px + 7 *
+                        (
+                            (100vw - 320px) / 880
+                        )
+                );
   }
 }
 @media screen and (min-width: 1200px) {
@@ -60,7 +70,12 @@
 }
 @media screen and (min-width: 320px) {
   #main header .nav-wrap .nav .nav-item a p {
-    font-size: calc(14px + 2 * ((100vw - 320px) / 880));
+    font-size: calc(
+                    14px + 2 *
+                        (
+                            (100vw - 320px) / 880
+                        )
+                );
   }
 }
 @media screen and (min-width: 1200px) {
@@ -73,11 +88,47 @@ h2.section-title {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 25px;
   line-height: 110%;
   /* identical to box height, or 53px */
   text-transform: uppercase;
   color: white;
+}
+h2.section-title {
+  font-size: 25px;
+}
+@media screen and (min-width: 320px) {
+  h2.section-title {
+    font-size: calc(
+                    25px + 23 *
+                        (
+                            (100vw - 320px) / 880
+                        )
+                );
+  }
+}
+@media screen and (min-width: 1200px) {
+  h2.section-title {
+    font-size: 48px;
+  }
+}
+
+#about-cerberus .container .content-wrap .contents .para {
+  font-family: "Ubuntu", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: white;
+}
+@media only screen and (min-width: 576px) {
+  #about-cerberus .container .content-wrap .contents .para {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #about-cerberus .container .content-wrap .contents .para {
+    font-size: 20px;
+  }
 }
 
 @media only screen and (min-width: 576px) {
@@ -198,6 +249,11 @@ img {
     grid-template-columns: 1fr 2fr;
   }
 }
+@media only screen and (min-width: 1400px) {
+  #main header .container {
+    grid-template-columns: 1fr 2.3fr;
+  }
+}
 #main header .logo {
   text-align: left;
   width: 80%;
@@ -261,11 +317,6 @@ img {
     column-gap: 40px;
   }
 }
-@media only screen and (min-width: 1800px) {
-  #main header .nav-wrap .nav ul {
-    column-gap: 50px;
-  }
-}
 #main header .nav-wrap .nav .nav-item a {
   display: flex;
   text-decoration: none;
@@ -282,11 +333,6 @@ img {
 @media only screen and (min-width: 1400px) {
   #main header .nav-wrap .social-bar ul {
     column-gap: 20px;
-  }
-}
-@media only screen and (min-width: 1800px) {
-  #main header .nav-wrap .social-bar ul {
-    column-gap: 30px;
   }
 }
 #main header .nav-wrap .social-bar ul li a {
@@ -382,16 +428,160 @@ img {
   }
 }
 
-#about {
-  height: 100vh;
+#about-cerberus {
+  background: transparent url("../img/about-cerberus/section-bg.png") no-repeat center center;
+  background-size: 100% 100%;
 }
-#about .container .section-title {
+@media only screen and (min-width: 768px) {
+  #about-cerberus {
+    position: relative;
+  }
+}
+#about-cerberus #about-cerberus-animation {
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  #about-cerberus #about-cerberus-animation {
+    display: block;
+    position: absolute;
+    left: -50px;
+    top: 0px;
+    width: 650px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #about-cerberus #about-cerberus-animation {
+    width: 630px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #about-cerberus #about-cerberus-animation {
+    left: 0px;
+    width: 735px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #about-cerberus #about-cerberus-animation {
+    width: 780px;
+  }
+}
+#about-cerberus #about-cerberus-animation img {
+  position: absolute;
+}
+#about-cerberus #about-cerberus-animation .about-img {
+  left: 0px;
+  top: 0px;
+}
+#about-cerberus #about-cerberus-animation .cerberus {
+  left: 190px;
+  width: 30%;
+  top: 215px;
+}
+@media only screen and (min-width: 992px) {
+  #about-cerberus #about-cerberus-animation .cerberus {
+    left: 180px;
+    width: 35%;
+    top: 180px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #about-cerberus #about-cerberus-animation .cerberus {
+    left: 210px;
+    width: 270px;
+    top: 195px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #about-cerberus #about-cerberus-animation .cerberus {
+    width: 292px;
+    left: 225px;
+    top: 205px;
+  }
+}
+#about-cerberus .container {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+@media only screen and (min-width: 992px) {
+  #about-cerberus .container {
+    padding-bottom: 130px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #about-cerberus .container {
+    padding-top: 100px;
+    padding-bottom: 160px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #about-cerberus .container {
+    padding-top: 120px;
+    padding-bottom: 190px;
+  }
+}
+#about-cerberus .container .section-title {
   text-align: center;
 }
-#about .container .content-wrap {
+#about-cerberus .container .content-wrap {
   display: flex;
   flex-flow: column wrap;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
+@media only screen and (min-width: 768px) {
+  #about-cerberus .container .content-wrap {
+    width: 55%;
+    margin-left: auto;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #about-cerberus .container .content-wrap {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #about-cerberus .container .content-wrap .contents {
+    margin-top: 60px;
+  }
+}
+#about-cerberus .container .content-wrap .contents .para {
+  margin-bottom: 10px;
+}
+#about-cerberus .container .content-wrap .contents .para:last-child {
+  margin-bottom: 0px;
+}
+@media only screen and (min-width: 768px) {
+  #about-cerberus .container .content-wrap .contents .para {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #about-cerberus .container .content-wrap .contents .para {
+    font-size: 20px;
+    margin-bottom: 20px;
+    max-width: 625px;
+  }
+}
+#about-cerberus .container .content-wrap .contents .para span {
+  color: #ffd600;
+  font-weight: 700;
+}
+#about-cerberus .container .content-wrap .btn-wrap {
+  margin-top: 30px;
+}
+@media only screen and (min-width: 768px) {
+  #about-cerberus .container .content-wrap .btn-wrap {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #about-cerberus .container .content-wrap .btn-wrap {
+    margin-top: 68px;
+  }
+}
+
 #crbrus-benefits .container .section-title {
   text-align: center;
 }
