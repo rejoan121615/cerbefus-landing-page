@@ -220,12 +220,18 @@ h2.section-title {
     text-align: center;
 }
 
+.container {
+   
+}
+
 // all content wrapper
 .full-container {
     position: relative;
+    
     // spark animation
     #spark-animation {
-        display: none;
+        // display: none;
+        
         position: absolute;
         left: 0;
         top: 0;
@@ -257,6 +263,8 @@ h2.section-title {
     background-size: 100% 100%;
     min-height: 100vh;
     height: 100%;
+    position: relative;
+    
     //---------------------- header section  -----------------
     header {
         padding-top: 15px;
@@ -595,6 +603,8 @@ h2.section-title {
     .container {
         padding-top: 63px;
         padding-bottom: 77px;
+        position: relative;
+        z-index: 300;
         .section-title {
             text-align: center;
         }
@@ -671,6 +681,8 @@ h2.section-title {
     background-size: cover;
     padding-top: 60px;
     padding-bottom: 80px;
+    // position: relative;
+    // z-index: 100;
 
     @include resp($lg) {
         padding-top: 122px;
@@ -695,6 +707,8 @@ h2.section-title {
         padding-bottom: 135px;
     }
     .container {
+        position: relative;
+        z-index: 300;
         .section-title {
             text-align: center;
         }
@@ -795,10 +809,14 @@ h2.section-title {
     padding-bottom: 40px;
     @include resp($md) {
         padding-top: 60px;
-        
     }
     .container {
         position: relative;
+        // content 
+        .content {
+            position: relative;
+            z-index: 300;
+        }
         .section-title {
             text-align: center;
             background: linear-gradient(180deg, #80ff00 0%, #fef38c 100%);
@@ -839,10 +857,10 @@ h2.section-title {
         @include resp($sm) {
             top: -40px;
         }
-        @include resp ($md) {
+        @include resp($md) {
             top: -140px;
         }
-        @include resp ($xl) {
+        @include resp($xl) {
             top: -45px;
             width: 50%;
             left: 25%;
@@ -959,3 +977,5 @@ footer {
         }
     }
 }
+
+@import 'spark';

@@ -227,7 +227,6 @@ body {
   position: relative;
 }
 .full-container #spark-animation {
-  display: none;
   position: absolute;
   left: 0;
   top: 0;
@@ -262,6 +261,7 @@ body {
   background-size: 100% 100%;
   min-height: 100vh;
   height: 100%;
+  position: relative;
 }
 #main header {
   padding-top: 15px;
@@ -623,6 +623,8 @@ body {
 #crbrus-benefits .container {
   padding-top: 63px;
   padding-bottom: 77px;
+  position: relative;
+  z-index: 300;
 }
 #crbrus-benefits .container .section-title {
   text-align: center;
@@ -753,6 +755,10 @@ body {
     padding-bottom: 135px;
   }
 }
+#project-roadmap .container {
+  position: relative;
+  z-index: 300;
+}
 #project-roadmap .container .section-title {
   text-align: center;
 }
@@ -864,6 +870,10 @@ body {
 }
 #join-cerberus .container {
   position: relative;
+}
+#join-cerberus .container .content {
+  position: relative;
+  z-index: 300;
 }
 #join-cerberus .container .section-title {
   text-align: center;
@@ -1040,6 +1050,26 @@ footer .container p.para {
   line-height: 140%;
   color: #ffffff;
   margin-top: 10px;
+}
+
+.full-container #spark-animation {
+  z-index: 200;
+}
+
+#main {
+  position: initial;
+  z-index: 100;
+}
+#main header,
+#main main,
+#main #about- {
+  position: relative;
+  z-index: 300;
+}
+
+#about-cerberus .container {
+  position: relative;
+  z-index: 300;
 }
 
 /*# sourceMappingURL=style.css.map */

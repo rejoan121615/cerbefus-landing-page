@@ -1,0 +1,20 @@
+.full-container #spark-animation {
+    z-index: 200;
+}
+
+#main {
+    position: initial;
+    z-index: 100;
+    // header
+    header,
+    main,
+    #about- {
+        position: relative;
+        z-index: 300;
+    }
+}
+
+#about-cerberus .container {
+    position: relative;
+    z-index: 300;
+}
