@@ -186,7 +186,6 @@ body {
   font-family: "Ubuntu", sans-serif;
   min-width: 151px;
   padding: 11px 41px;
-  background: #ffffff;
   border-radius: 15px;
   font-style: normal;
   font-weight: 700;
@@ -206,6 +205,45 @@ body {
   width: 22px;
 }
 
+.btn-fill {
+  position: relative;
+  z-index: 430;
+  overflow: hidden;
+  height: 44px;
+}
+.btn-fill:focus:after {
+  background-color: #f1e263;
+}
+.btn-fill:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 15px;
+  z-index: -2;
+}
+.btn-fill:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #e8c406;
+  transition: all 0.3s;
+  border-radius: 15px;
+  z-index: -1;
+}
+.btn-fill:hover {
+  color: black;
+}
+.btn-fill:hover:before {
+  width: 100%;
+}
+
 .btn-outline {
   background-color: transparent;
   color: white;
@@ -213,6 +251,11 @@ body {
   font-style: normal;
   border: 2px solid white;
   text-transform: none;
+  transition: all 0.3s;
+}
+.btn-outline:hover {
+  border-color: #ffd600;
+  color: #ffd600;
 }
 
 #main img {
@@ -939,7 +982,10 @@ body {
     max-width: 740px;
   }
 }
-#join-cerberus .container .btn-wrap .btn-fill {
+#join-cerberus .container .btn-wrap .btn-fill:before {
+  background-color: #fff;
+}
+#join-cerberus .container .btn-wrap .btn-fill:after {
   background-color: #ffc800;
 }
 #join-cerberus .bg-shadow {
@@ -1042,6 +1088,11 @@ footer .container .footer-wrap .footer-top img {
     width: 140px;
   }
 }
+@media only screen and (min-width: 992px) {
+  footer .container .footer-wrap .footer-top img {
+    width: 165px;
+  }
+}
 footer .container .footer-wrap .footer-top .icons {
   list-style: none;
   display: flex;
@@ -1059,6 +1110,7 @@ footer .container .footer-wrap .footer-top .icons a {
 }
 footer .container .footer-wrap .footer-top .icons a img {
   width: 45px;
+  transition: transform 0.3s;
 }
 @media only screen and (min-width: 576px) {
   footer .container .footer-wrap .footer-top .icons a img {
@@ -1069,6 +1121,9 @@ footer .container .footer-wrap .footer-top .icons a img {
   footer .container .footer-wrap .footer-top .icons a img {
     width: 70px;
   }
+}
+footer .container .footer-wrap .footer-top .icons a img:hover {
+  transform: scale(1.08);
 }
 footer .container .footer-wrap .footer-top .icons li:last-child img {
   width: 48px;
