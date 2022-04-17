@@ -225,6 +225,7 @@ h2.section-title {
     position: relative;
     // spark animation
     #spark-animation {
+        display: none;
         position: absolute;
         left: 0;
         top: 0;
@@ -459,6 +460,7 @@ h2.section-title {
 
 // about section ------------------------------
 #about-cerberus {
+    margin-top: -1.5px;
     // height: 100vh;
     background: transparent url("../img/about-cerberus/section-bg.png")
         no-repeat center center;
@@ -641,22 +643,21 @@ h2.section-title {
             right: 0px;
             top: 50%;
         }
-        @include resp ($md) {
+        @include resp($md) {
             top: 0px;
             width: 60%;
         }
-        @include resp ($xl) {
+        @include resp($xl) {
             width: 70%;
             top: -170px;
             height: 634px;
         }
-        @include resp ($xxl) {
+        @include resp($xxl) {
             top: -310px;
             // background-color: green;
-
         }
         img {
-            @include resp ($xl) {
+            @include resp($xl) {
                 width: 100%;
             }
         }
@@ -797,6 +798,7 @@ h2.section-title {
         padding-bottom: 65px;
     }
     .container {
+        position: relative;
         .section-title {
             text-align: center;
             background: linear-gradient(180deg, #80ff00 0%, #fef38c 100%);
@@ -807,14 +809,18 @@ h2.section-title {
         }
         .para {
             @extend %subtitle;
-            max-width: 770px;
+            max-width: 640px;
+
+            // max-width: 770px;
             margin-left: auto;
             margin-right: auto;
             text-align: center;
             padding-bottom: 40px;
             padding-top: 20px;
+
             @include resp($lg) {
                 padding-bottom: 60px;
+                max-width: 740px;
             }
         }
 
@@ -822,6 +828,27 @@ h2.section-title {
             .btn-fill {
                 background-color: #ffc800;
             }
+        }
+    }
+    // bg center shadow
+    .bg-shadow {
+        position: absolute;
+        left: 0%;
+        top: 40px;
+        width: 100%;
+        @include resp($sm) {
+            top: -40px;
+        }
+        @include resp ($md) {
+            top: -140px;
+        }
+        @include resp ($xl) {
+            top: -45px;
+            width: 50%;
+            left: 25%;
+        }
+        img {
+            width: 100%;
         }
     }
 }
