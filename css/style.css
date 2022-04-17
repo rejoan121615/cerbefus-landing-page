@@ -178,7 +178,7 @@ img {
   width: 100%;
 }
 
-.full-container {
+body {
   background-color: #a41115;
 }
 
@@ -221,6 +221,28 @@ img {
 
 .btn-wrap {
   text-align: center;
+}
+
+.full-container {
+  position: relative;
+}
+.full-container #spark-animation {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 80%;
+}
+.full-container #spark-animation svg {
+  padding-top: 20px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 576px) {
+  .full-container #spark-animation svg {
+    width: 90%;
+  }
 }
 
 #main {
@@ -582,23 +604,9 @@ img {
   }
 }
 
-@media only screen and (min-width: 576px) {
-  #crbrus-benefits .container {
-    padding-top: 20px;
-    padding-bottom: 30px;
-  }
-}
-@media only screen and (min-width: 992px) {
-  #crbrus-benefits .container {
-    padding-top: 45px;
-    padding-bottom: 55px;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  #crbrus-benefits .container {
-    padding-top: 63px;
-    padding-bottom: 77px;
-  }
+#crbrus-benefits .container {
+  padding-top: 63px;
+  padding-bottom: 77px;
 }
 #crbrus-benefits .container .section-title {
   text-align: center;
@@ -630,25 +638,91 @@ img {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
-  font-size: 26px;
   line-height: 110%;
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
   max-width: 324px;
 }
+#crbrus-benefits .container .card-wrap > div h4 {
+  font-size: 20px;
+}
+@media screen and (min-width: 320px) {
+  #crbrus-benefits .container .card-wrap > div h4 {
+    font-size: calc(
+                    20px + 6 *
+                        (
+                            (100vw - 320px) / 672
+                        )
+                );
+  }
+}
+@media screen and (min-width: 992px) {
+  #crbrus-benefits .container .card-wrap > div h4 {
+    font-size: 26px;
+  }
+}
 
+#project-roadmap {
+  background: transparent url("../img/project-roadmap/project-roadmap.png") no-repeat center center;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+@media only screen and (min-width: 992px) {
+  #project-roadmap {
+    padding-top: 122px;
+    padding-bottom: 130px;
+  }
+}
+@media only screen and (min-width: 576px) {
+  #project-roadmap {
+    background-size: 135%;
+    padding-top: 90px;
+    padding-bottom: 105px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #project-roadmap {
+    background-size: 120%;
+    padding-top: 105px;
+    padding-bottom: 115px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #project-roadmap {
+    background-size: 110%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #project-roadmap {
+    background-size: 100% 100%;
+    padding-top: 122px;
+    padding-bottom: 135px;
+  }
+}
 #project-roadmap .container .section-title {
   text-align: center;
 }
 #project-roadmap .container .roadmap {
   list-style: none;
+  padding-top: 50px;
 }
 @media only screen and (min-width: 576px) {
   #project-roadmap .container .roadmap {
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #project-roadmap .container .roadmap {
+    padding-top: 65px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #project-roadmap .container .roadmap {
+    padding-top: 80px;
   }
 }
 #project-roadmap .container .roadmap li {
@@ -667,7 +741,7 @@ img {
   }
 }
 #project-roadmap .container .roadmap li .img {
-  width: 250px;
+  width: 125px;
 }
 @media only screen and (min-width: 576px) {
   #project-roadmap .container .roadmap li .img {
@@ -727,6 +801,16 @@ img {
   color: #fff279;
 }
 
+#join-cerberus {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@media only screen and (min-width: 768px) {
+  #join-cerberus {
+    padding-top: 60px;
+    padding-bottom: 65px;
+  }
+}
 #join-cerberus .container .section-title {
   text-align: center;
   background: linear-gradient(180deg, #80ff00 0%, #fef38c 100%);
@@ -741,6 +825,7 @@ img {
   margin-right: auto;
   text-align: center;
   padding-bottom: 40px;
+  padding-top: 20px;
 }
 @media only screen and (min-width: 992px) {
   #join-cerberus .container .para {
