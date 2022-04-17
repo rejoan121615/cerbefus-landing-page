@@ -354,13 +354,29 @@ h2.section-title {
                         display: flex;
                         text-decoration: none;
                         align-items: center;
-                        img {
+                        svg {
                             @include wh(14px);
                             margin-right: 5px;
                         }
                         p {
                             @extend %navigation;
                         }
+                        &:hover {
+                            p {
+                                color: $yellow;
+                            }
+                            svg path {
+                                fill: $yellow;
+                            }
+                        }
+                    }
+                }
+                .nav-item.active {
+                    p {
+                        color: $yellow;
+                    }
+                    svg path {
+                        fill: $yellow;
                     }
                 }
             }

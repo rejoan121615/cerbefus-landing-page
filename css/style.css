@@ -356,10 +356,22 @@ body {
   text-decoration: none;
   align-items: center;
 }
-#main header .nav-wrap .nav .nav-item a img {
+#main header .nav-wrap .nav .nav-item a svg {
   width: 14px;
   height: 14px;
   margin-right: 5px;
+}
+#main header .nav-wrap .nav .nav-item a:hover p {
+  color: #ffd600;
+}
+#main header .nav-wrap .nav .nav-item a:hover svg path {
+  fill: #ffd600;
+}
+#main header .nav-wrap .nav .nav-item.active p {
+  color: #ffd600;
+}
+#main header .nav-wrap .nav .nav-item.active svg path {
+  fill: #ffd600;
 }
 #main header .nav-wrap .social-bar ul {
   column-gap: 10px;
