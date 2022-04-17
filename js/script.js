@@ -5,3 +5,13 @@ anchoreTag.forEach(a => {
     event.preventDefault()
   } 
 })
+
+
+// gsap file 
+gsap.registerPlugin(ScrollTrigger);
+
+
+// master timeline 
+const masterTl = gsap.timeline();
+
+// home page animation 
