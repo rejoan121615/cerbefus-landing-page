@@ -582,6 +582,24 @@ img {
   }
 }
 
+@media only screen and (min-width: 576px) {
+  #crbrus-benefits .container {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #crbrus-benefits .container {
+    padding-top: 45px;
+    padding-bottom: 55px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #crbrus-benefits .container {
+    padding-top: 63px;
+    padding-bottom: 77px;
+  }
+}
 #crbrus-benefits .container .section-title {
   text-align: center;
 }
@@ -589,12 +607,15 @@ img {
   display: grid;
   grid-template-columns: 1fr;
   max-width: 1040px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
+  row-gap: 40px;
 }
 @media only screen and (min-width: 768px) {
   #crbrus-benefits .container .card-wrap {
     grid-template-columns: repeat(3, 1fr);
+    row-gap: 0px;
   }
 }
 #crbrus-benefits .container .card-wrap > div {
