@@ -223,20 +223,27 @@ h2.section-title {
 // all content wrapper
 .full-container {
     position: relative;
-    // spark animation 
+    // spark animation
     #spark-animation {
         position: absolute;
         left: 0;
         top: 0;
         width: 100%;
         height: 80%;
+        @include resp($xl) {
+            height: 85%;
+        }
         svg {
+            display: block;
             padding-top: 20px;
             width: 100%;
             margin-left: auto;
             margin-right: auto;
-            @include resp ($sm) {
+            @include resp($sm) {
                 width: 90%;
+            }
+            @include resp($xl) {
+                height: 100%;
             }
         }
     }
@@ -582,10 +589,10 @@ h2.section-title {
 
 // ------------ crbrus benefits  ------------
 #crbrus-benefits {
+    position: relative;
     .container {
         padding-top: 63px;
         padding-bottom: 77px;
-
         .section-title {
             text-align: center;
         }
@@ -621,6 +628,36 @@ h2.section-title {
                     color: #ffffff;
                     max-width: 324px;
                 }
+            }
+        }
+    } // background shadow
+    .bg-shadow {
+        display: none;
+        width: 100%;
+        @include resp($sm) {
+            display: block;
+            width: 100%;
+            position: absolute;
+            right: 0px;
+            top: 50%;
+        }
+        @include resp ($md) {
+            top: 0px;
+            width: 60%;
+        }
+        @include resp ($xl) {
+            width: 70%;
+            top: -170px;
+            height: 634px;
+        }
+        @include resp ($xxl) {
+            top: -310px;
+            // background-color: green;
+
+        }
+        img {
+            @include resp ($xl) {
+                width: 100%;
             }
         }
     }
