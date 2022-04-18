@@ -37,90 +37,90 @@ respBtn.onclick = function () {
 // gsap file
 gsap.registerPlugin(ScrollTrigger);
 
-// gsap.set(
-//     " #main .section-wrap .main-all-content .main-section-header h1, #main .btn-wrap a , #main",
-//     {
-//         opacity: 0,
-//     }
-// );
+gsap.set(
+    " #main .section-wrap .main-all-content .main-section-header h1, #main .btn-wrap a , #main",
+    {
+        opacity: 0,
+    }
+);
 
 // master timeline
 const masterTl = gsap.timeline();
 
 // home page animation
-// function HomeAnimation() {
-//     const tl = gsap.timeline();
+function HomeAnimation() {
+    const tl = gsap.timeline();
 
-//     // main
-//     tl.to("#main", {
-//         opacity: 1,
-//         duration: 1.5,
-//         delay: 1,
-//     })
-//         .fromTo(
-//             "#main main .container .section-wrap .main-all-content .main-section-header h1",
-//             {
-//                 opacity: 0,
-//                 y: "100%",
-//                 skewX: "-15deg",
-//             },
-//             {
-//                 opacity: 1,
-//                 y: "0%",
-//                 duration: 0.8,
-//                 stagger: 0.33,
-//                 skewX: "0",
-//             }
-//         )
-//         .fromTo(
-//             "#main main .container .section-wrap .main-highlight-img img",
-//             {
-//                 opacity: 1,
-//                 clipPath: "circle(0% at 50% 50%)",
-//             },
-//             {
-//                 clipPath: "circle(60% at 50% 50%)",
-//                 duration: 1,
-//             }
-//         )
-//         .from(
-//             "#main main .container .section-wrap .main-all-content .para span",
-//             {
-//                 opacity: 0,
-//                 y: "100%",
-//                 stagger: 0.25,
-//                 skewX: "-20deg",
-//                 duration: 0.8,
-//             }
-//         )
-//         .fromTo(
-//             "#main header",
-//             {
-//                 y: "-100%",
-//             },
-//             {
-//                 y: 0,
-//                 opacity: 1,
-//                 duration: 1.5,
-//             },
-//             "<"
-//         )
-//         .fromTo(
-//             "#main main .btn-wrap a",
-//             {
-//                 opacity: 0,
-//                 y: "40px",
-//             },
-//             {
-//                 opacity: 1,
-//                 duration: 0.6,
-//                 y: "0",
-//             },
-//             "<"
-//         );
+    // main
+    tl.to("#main", {
+        opacity: 1,
+        duration: 1.5,
+        delay: 1,
+    })
+        .fromTo(
+            "#main main .container .section-wrap .main-all-content .main-section-header h1",
+            {
+                opacity: 0,
+                y: "100%",
+                skewX: "-15deg",
+            },
+            {
+                opacity: 1,
+                y: "0%",
+                duration: 0.8,
+                stagger: 0.33,
+                skewX: "0",
+            }
+        )
+        .fromTo(
+            "#main main .container .section-wrap .main-highlight-img img",
+            {
+                opacity: 1,
+                clipPath: "circle(0% at 50% 50%)",
+            },
+            {
+                clipPath: "circle(60% at 50% 50%)",
+                duration: 1,
+            }
+        )
+        .from(
+            "#main main .container .section-wrap .main-all-content .para span",
+            {
+                opacity: 0,
+                y: "100%",
+                stagger: 0.25,
+                skewX: "-20deg",
+                duration: 0.8,
+            }
+        )
+        .fromTo(
+            "#main header",
+            {
+                y: "-100%",
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1.5,
+            },
+            "<"
+        )
+        .fromTo(
+            "#main main .btn-wrap a",
+            {
+                opacity: 0,
+                y: "40px",
+            },
+            {
+                opacity: 1,
+                duration: 0.6,
+                y: "0",
+            },
+            "<"
+        );
 
-//     return tl;
-// }
+    return tl;
+}
 
 gsap.utils.toArray("#spark-animation svg g").forEach((round) => {
     gsap.fromTo(
@@ -184,7 +184,7 @@ function aboutCerberus() {
             {
                 opacity: 1,
                 y: "0%",
-                duration: 0.8,
+                duration: 0.5,
                 skewX: "0",
             }
         )
@@ -193,7 +193,7 @@ function aboutCerberus() {
             y: "100%",
             stagger: 0.25,
             skewX: "-20deg",
-            duration: 0.8,
+            duration: 0.6,
         })
         .fromTo(
             "#about-cerberus .container .content-wrap .btn-wrap .btn-fill",
@@ -224,8 +224,7 @@ function aboutCerberus() {
     ScrollTrigger.create({
         animation: tl,
         trigger: "#about-cerberus",
-        pin: true,
-        scrub: true,
+        start: 'center center',
     });
 }
 
@@ -244,7 +243,7 @@ function crbrusBenefits() {
             {
                 opacity: 1,
                 y: "0%",
-                duration: 0.8,
+                duration: 0.5,
                 skewX: "0",
             }
         )
@@ -258,7 +257,7 @@ function crbrusBenefits() {
             {
                 opacity: 1,
                 scale: 1,
-                duration: 1,
+                duration: 0.5,
                 y: 0,
             }
         )
@@ -271,8 +270,7 @@ function crbrusBenefits() {
             {
                 opacity: 1,
                 y: 0,
-                duration: 1,
-                stagger: 0.3,
+                duration: 0.4,
             }
         )
         .fromTo(
@@ -285,7 +283,7 @@ function crbrusBenefits() {
             {
                 opacity: 1,
                 scale: 1,
-                duration: 1,
+                duration: 0.5,
                 y: 0,
             }
         )
@@ -298,8 +296,7 @@ function crbrusBenefits() {
             {
                 opacity: 1,
                 y: 0,
-                duration: 1,
-                stagger: 0.3,
+                duration: 0.4,
             }
         )
         .fromTo(
@@ -312,7 +309,7 @@ function crbrusBenefits() {
             {
                 opacity: 1,
                 scale: 1,
-                duration: 1,
+                duration: 0.5,
                 y: 0,
             }
         )
@@ -325,14 +322,14 @@ function crbrusBenefits() {
             {
                 opacity: 1,
                 y: 0,
-                duration: 1,
-                stagger: 0.3,
+                duration: 0.4,
             }
         );
 
     ScrollTrigger.create({
         animation: animate,
         trigger: "#crbrus-benefits ",
+        start: "0% 45%"
     });
 }
 
@@ -443,14 +440,14 @@ function joinCommunity() {
     ScrollTrigger.create({
         animation: tl,
         trigger: "#join-cerberus",
-        start: "center center",
+        markers: true
     });
 }
 
-// masterTl
-//     .add(HomeAnimation())
-//     .add(SparkAnimation())
-//     .add(aboutCerberus())
-//     .add(crbrusBenefits())
-//     .add(projectRoadmap())
-//     .add(joinCommunity());
+masterTl
+    .add(HomeAnimation())
+    .add(SparkAnimation())
+    .add(aboutCerberus())
+    .add(crbrusBenefits())
+    .add(projectRoadmap())
+    .add(joinCommunity());
