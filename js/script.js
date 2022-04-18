@@ -120,15 +120,92 @@ function SparkAnimation() {
     tl.fromTo(
         "#spark-animation svg g",
         {
-            opacity: 0
+            opacity: 0,
         },
         {
             opacity: 1,
-            duration: 1.2
+            duration: 1.2,
         }
     );
 
     return tl;
 }
 
-masterTl.add(HomeAnimation()).add(SparkAnimation());
+function aboutCerberus() {
+    const tl = gsap.timeline();
+
+    const animate = gsap
+        .timeline()
+        .fromTo(
+            "#about-cerberus",
+            {
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                duration: 1.2,
+            }
+        )
+        .fromTo(
+            "#about-cerberus .container .section-title",
+            {
+                opacity: 0,
+                y: "100%",
+                skewX: "-15deg",
+            },
+            {
+                opacity: 1,
+                y: "0%",
+                duration: 0.8,
+                skewX: "0",
+            }
+        )
+
+        .from("#about-cerberus .container .content-wrap .contents .para", {
+            opacity: 0,
+            y: "100%",
+            stagger: 0.25,
+            skewX: "-20deg",
+            duration: 0.8,
+        })
+
+        .fromTo(
+            "#about-cerberus .container .content-wrap .btn-wrap .btn-fill",
+            {
+                opacity: 0,
+                scale: 0,
+            },
+            {
+                opacity: 1,
+                scale: 1,
+            }
+        )
+        .fromTo(
+            "#about-cerberus #about-cerberus-animation .cerberus",
+            {
+                x: "-50%",
+                opacity: 0,
+            },
+            {
+                x: 0,
+                opacity: 1,
+                duration: 0.5,
+            }
+        );
+
+    tl.add(animate);
+
+    ScrollTrigger.create({
+        animation: tl,
+        trigger: "#about-cerberus",
+        markers: true,
+        pin: true,
+        // start: "center center",
+        scrub: true,
+    });
+}
+
+masterTl
+    // .add(HomeAnimation())
+    // .add(SparkAnimation())
+    .add(aboutCerberus());
