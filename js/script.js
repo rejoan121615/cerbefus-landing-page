@@ -224,7 +224,77 @@ function aboutCerberus() {
     ScrollTrigger.create({
         animation: tl,
         trigger: "#about-cerberus",
-        start: 'center center',
+        start: "center center",
+    });
+}
+
+
+function aboutCerberusLg() {
+    const tl = gsap.timeline();
+
+    const animate = gsap
+        .timeline()
+        .fromTo(
+            "#about-cerberus",
+            {
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                duration: 1.2,
+            }
+        )
+        .fromTo(
+            "#about-cerberus .container .section-title",
+            {
+                opacity: 0,
+                y: "100%",
+                skewX: "-15deg",
+            },
+            {
+                opacity: 1,
+                y: "0%",
+                duration: 0.5,
+                skewX: "0",
+            }
+        )
+        .from("#about-cerberus .container .content-wrap .contents .para", {
+            opacity: 0,
+            y: "100%",
+            stagger: 0.25,
+            skewX: "-20deg",
+            duration: 0.6,
+        })
+        .fromTo(
+            "#about-cerberus .container .content-wrap .btn-wrap .btn-fill",
+            {
+                opacity: 0,
+                scale: 0,
+            },
+            {
+                opacity: 1,
+                scale: 1,
+            }
+        )
+        .fromTo(
+            "#about-cerberus #about-cerberus-animation .cerberus",
+            {
+                x: "-50%",
+                opacity: 0,
+            },
+            {
+                x: 0,
+                opacity: 1,
+                duration: 0.5,
+            }
+        );
+
+    tl.add(animate);
+
+    ScrollTrigger.create({
+        animation: tl,
+        trigger: "#about-cerberus",
+        start: "0 50%",
     });
 }
 
@@ -329,7 +399,7 @@ function crbrusBenefits() {
     ScrollTrigger.create({
         animation: animate,
         trigger: "#crbrus-benefits ",
-        start: "0% 45%"
+        start: "0% 45%",
     });
 }
 
@@ -364,7 +434,7 @@ function projectRoadmap() {
                         {
                             opacity: 0,
                             y: "-25px",
-                            duration: 0.8,
+                            duration: 0.4,
                         }
                     )
                     .from(
@@ -374,7 +444,7 @@ function projectRoadmap() {
                         {
                             opacity: 0,
                             y: "-45%",
-                            duration: 0.5,
+                            duration: 0.4,
                         }
                     )
             );
@@ -404,7 +474,7 @@ function joinCommunity() {
             {
                 lineHeight: "110%",
                 opacity: 1,
-                duration: 0.7,
+                duration: 0.5,
                 y: "0%",
             }
         )
@@ -418,7 +488,7 @@ function joinCommunity() {
             {
                 lineHeight: "140%",
                 opacity: 1,
-                duration: 0.7,
+                duration: 0.5,
                 y: "0%",
             }
         )
@@ -431,7 +501,7 @@ function joinCommunity() {
             {
                 scale: 1,
                 opacity: 1,
-                duration: 1,
+                duration: 0.5,
             }
         );
 
@@ -440,14 +510,27 @@ function joinCommunity() {
     ScrollTrigger.create({
         animation: tl,
         trigger: "#join-cerberus",
-        markers: true
     });
 }
 
-masterTl
-    .add(HomeAnimation())
-    .add(SparkAnimation())
-    .add(aboutCerberus())
-    .add(crbrusBenefits())
-    .add(projectRoadmap())
-    .add(joinCommunity());
+ScrollTrigger.matchMedia({
+    "(max-width: 1199px)": function () {
+        masterTl
+            .add(HomeAnimation())
+            .add(SparkAnimation())
+            .add(aboutCerberus())
+            .add(crbrusBenefits())
+            .add(projectRoadmap())
+            .add(joinCommunity());
+    },
+    "(min-width: 1200px)": function () {
+        masterTl
+            .add(HomeAnimation())
+            .add(SparkAnimation())
+            .add(aboutCerberusLg())
+            .add(crbrusBenefits())
+            .add(projectRoadmap())
+            .add(joinCommunity());
+    },
+    
+});
