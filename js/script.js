@@ -311,23 +311,71 @@ function crbrusBenefits() {
     });
 }
 
-
 function projectRoadmap() {
+    const tl = gsap.timeline();
 
-    const tl = gsap.timeline()
+    const animate = gsap.timeline().fromTo(
+        "#project-roadmap .container .section-title",
+        {
+            opacity: 0,
+            y: "100%",
+            skewX: "-15deg",
+        },
+        {
+            opacity: 1,
+            y: "0%",
+            duration: 0.8,
+            skewX: "0",
+        }
+    );
 
-    const animate = gsap.timeline().fromTo()
+    gsap.utils
+        .toArray("#project-roadmap .container .roadmap li")
+        .forEach((item, index) => {
+            animate.add(
+                gsap
+                    .timeline()
+                    .from(
+                        `#project-roadmap .container .roadmap li:nth-child(${1+index})`,
+                        {
+                            opacity: 0,
+                            y: "-25px",
+                            duration: 0.6,
+                        }
+                    )
+                    .from(
+                        `#project-roadmap .container .roadmap li:nth-child(${1+index}) .line`,
+                        {
+                            opacity: 0,
+                            y: "-45%",
+                        }
+                    )
+            );
+        });
+
+    // .from("#project-roadmap .container .roadmap li:nth-child(1)", {
+    //     opacity: 0,
+    //     y: "-25px",
+    //     duration: 0.6,
+    // })
+    // .from("#project-roadmap .container .roadmap li:nth-child(1) .line", {
+    //     opacity: 0,
+    //     y: "-45%"
+    // })
+
+    tl.add(animate);
 
     ScrollTrigger.create({
-        trigger: "project-roadmap",
+        animation: tl,
+        trigger: "#project-roadmap",
+        markers: true,
+        pin: true,
     });
-
-
 }
-
 
 masterTl
     // .add(HomeAnimation())
     // .add(SparkAnimation())
-    .add(aboutCerberus())
-    .add(crbrusBenefits())
+    // .add(aboutCerberus())
+    // .add(crbrusBenefits())
+    .add(projectRoadmap());
