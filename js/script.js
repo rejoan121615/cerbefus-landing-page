@@ -160,7 +160,6 @@ function aboutCerberus() {
                 skewX: "0",
             }
         )
-
         .from("#about-cerberus .container .content-wrap .contents .para", {
             opacity: 0,
             y: "100%",
@@ -168,7 +167,6 @@ function aboutCerberus() {
             skewX: "-20deg",
             duration: 0.8,
         })
-
         .fromTo(
             "#about-cerberus .container .content-wrap .btn-wrap .btn-fill",
             {
@@ -198,14 +196,138 @@ function aboutCerberus() {
     ScrollTrigger.create({
         animation: tl,
         trigger: "#about-cerberus",
-        markers: true,
         pin: true,
         // start: "center center",
         scrub: true,
     });
 }
 
+function crbrusBenefits() {
+    const tl = gsap.timeline();
+
+    const animate = gsap
+        .timeline()
+        .fromTo(
+            "#crbrus-benefits .container .section-title",
+            {
+                opacity: 0,
+                y: "100%",
+                skewX: "-15deg",
+            },
+            {
+                opacity: 1,
+                y: "0%",
+                duration: 0.8,
+                skewX: "0",
+            }
+        )
+        .fromTo(
+            "#crbrus-benefits .container .card-wrap div:nth-child(1) img",
+            {
+                opacity: 0,
+                scale: 0,
+                y: 100,
+            },
+            {
+                opacity: 1,
+                scale: 1,
+                duration: 1,
+                y: 0,
+            }
+        )
+        .fromTo(
+            "#crbrus-benefits .container .card-wrap div:nth-child(1) h4",
+            {
+                y: 50,
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.3,
+            }
+        )
+        .fromTo(
+            "#crbrus-benefits .container .card-wrap div:nth-child(2) img",
+            {
+                opacity: 0,
+                scale: 0,
+                y: 100,
+            },
+            {
+                opacity: 1,
+                scale: 1,
+                duration: 1,
+                y: 0,
+            }
+        )
+        .fromTo(
+            "#crbrus-benefits .container .card-wrap div:nth-child(2) h4",
+            {
+                y: 50,
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.3,
+            }
+        )
+        .fromTo(
+            "#crbrus-benefits .container .card-wrap div:nth-child(3) img",
+            {
+                opacity: 0,
+                scale: 0,
+                y: 100,
+            },
+            {
+                opacity: 1,
+                scale: 1,
+                duration: 1,
+                y: 0,
+            }
+        )
+        .fromTo(
+            "#crbrus-benefits .container .card-wrap div:nth-child(3) h4",
+            {
+                y: 50,
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.3,
+            }
+        );
+
+    ScrollTrigger.create({
+        animation: animate,
+        trigger: "#crbrus-benefits ",
+        pin: true,
+        start: "center center",
+    });
+}
+
+
+function projectRoadmap() {
+
+    const tl = gsap.timeline()
+
+    const animate = gsap.timeline().fromTo()
+
+    ScrollTrigger.create({
+        trigger: "project-roadmap",
+    });
+
+
+}
+
+
 masterTl
     // .add(HomeAnimation())
     // .add(SparkAnimation())
-    .add(aboutCerberus());
+    .add(aboutCerberus())
+    .add(crbrusBenefits())
