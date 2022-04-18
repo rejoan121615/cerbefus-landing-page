@@ -265,7 +265,7 @@ $btn-radius: 15px;
         left: 0;
         width: 100%;
         height: 100%;
-     
+
         border-radius: $btn-radius;
         z-index: -2;
     }
@@ -276,7 +276,7 @@ $btn-radius: 15px;
         left: 0;
         width: 0%;
         height: 100%;
-        
+
         transition: all 0.3s;
         border-radius: $btn-radius;
         z-index: -1;
@@ -365,10 +365,11 @@ h2.section-title {
             display: flex;
             flex-flow: row wrap;
             align-items: center;
-            svg {
+            img {
                 max-width: 225px;
                 @include resp($xl) {
                     max-width: 256px;
+                    transform: translateX(-5px);
                 }
             }
         }
@@ -398,13 +399,22 @@ h2.section-title {
         }
         // navbar
         .nav-wrap {
+            // display: flex;
+            // flex-flow: column wrap;
+            width: 100%;
+            // background-color: $red;
+            // padding: 20px 25px 35px 25px;
+            // border-radius: 15px;
+            // align-items: center;
+            position: relative;
             display: flex;
-            flex-flow: column wrap;
-            display: none;
+            justify-content: flex-end;
+            height: 0px;
+            overflow: hidden;
             @include resp($xl) {
-                display: flex;
                 flex-flow: row wrap;
                 justify-content: space-between;
+                height: initial;
             }
             .nav,
             .social-bar {
@@ -415,20 +425,63 @@ h2.section-title {
             }
             // nav
             .nav {
+                order: 2;
+                background-color: $red;
+                border-radius: 25px;
+                padding: 25px 35px;
+                display: flex;
+                flex-flow: column wrap;
+                width: 100%;
+                max-width: 400px;
+                height: 290px;
+                @include resp($xl) {
+                    height: initial;
+                    width: 100%;
+                    max-width: initial;
+                    position: initial;
+                    background-color: transparent;
+                    padding: 0;
+                    flex-flow: row wrap;
+                    margin-top: 0px;
+                    justify-content: space-between;
+                }
                 ul {
-                    column-gap: 30px;
+                    display: flex;
+                    flex-flow: column wrap;
+                    // column-gap: 30px;
+                    order: 2;
+                    @include resp($xl) {
+                        flex-flow: row wrap;
+                        column-gap: 30px;
+                    }
                     @include resp($xxl) {
                         column-gap: 40px;
                     }
                 }
+
                 .nav-item {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.532);
+                    &:last-child {
+                        border-bottom: 0px solid white;
+                    }
+                    @include resp($xl) {
+                        border: none;
+                        padding-bottom: 0px;
+                        padding-top: 0px;
+                    }
                     a {
                         display: flex;
                         text-decoration: none;
                         align-items: center;
                         svg {
-                            @include wh(14px);
-                            margin-right: 5px;
+                            @include wh(20px);
+                            margin-right: 15px;
+                            @include resp($xl) {
+                                @include wh(14px);
+                                margin-right: 5px;
+                            }
                         }
                         p {
                             @extend %navigation;
@@ -455,8 +508,26 @@ h2.section-title {
 
             // social bar
             .social-bar {
+                order: 1;
+                width: 100%;
+                max-width: 350px;
+                margin-left: auto;
+                margin-right: auto;
+                @include resp($xl) {
+                    width: initial;
+                    max-width: initial;
+                    order: 3;
+                    margin-left: initial;
+                    margin-right: initial;
+                }
                 ul {
                     column-gap: 10px;
+                    justify-content: space-between;
+                    flex-flow: row wrap;
+                    order: 1;
+                    @include resp($xl) {
+                        width: 100%;
+                    }
                     @include resp($xxl) {
                         column-gap: 20px;
                     }
@@ -482,7 +553,7 @@ h2.section-title {
                                 font-style: normal;
                                 font-weight: 400;
                                 font-size: 1px;
-                                line-height: 16px;
+                                line-height: 1px;
                                 text-align: center;
                                 text-transform: capitalize;
                                 color: #ffd600;
