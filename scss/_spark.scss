@@ -5,6 +5,9 @@
 #main {
     position: initial;
     z-index: 100;
+    @include resp ($xl) {
+        position: relative;
+    }
     // header
     header,
     main,

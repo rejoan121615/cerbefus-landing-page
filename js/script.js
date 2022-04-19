@@ -39,11 +39,13 @@ function HomeAnimation() {
     const tl = gsap.timeline();
 
     // main
-    tl.to("#main", {
-        opacity: 1,
-        duration: 1.5,
-        delay: 1,
-    })
+    const animate = gsap
+        .timeline()
+        .to("#main", {
+            opacity: 1,
+            duration: 1.5,
+            delay: 1,
+        })
         .fromTo(
             "#main main .container .section-wrap .main-all-content .main-section-header h1",
             {
@@ -105,46 +107,78 @@ function HomeAnimation() {
             },
             "<"
         );
+    tl.add(animate);
 
-    return tl;
+    // ScrollTrigger.create({
+    //     animation: tl,
+    //     trigger: "#main",
+    //     markers: true,
+    //     scrub: true,
+    //     pin: true
+    // })
 }
 
-gsap.utils.toArray("#spark-animation svg g").forEach((round) => {
-    gsap.fromTo(
-        round,
-        {
-            x: 0,
-            y: 0,
-            scale: 0.7,
-        },
-        {
-            x: gsap.utils.random(25, 50),
-            y: gsap.utils.random(25, 50),
-            duration: 5,
-            scale: 1,
-            yoyo: true,
-            repeat: -1,
-            repeatRefresh: true,
-        }
-    );
-});
-
-function SparkAnimation() {
+function homeBgParallexXl() {
     const tl = gsap.timeline();
 
-    tl.fromTo(
-        "#spark-animation svg g",
-        {
-            opacity: 0,
-        },
-        {
-            opacity: 1,
-            duration: 1.2,
-        }
-    );
+    const animate = gsap.timeline().to("#bottom-left", {
+        x: '-70%',
+    }).to("#bottom-right", {
+        x: "100%"
+    }, "<").to("#top-right", {
+        x: "100%",
+        y: "100px"
+    }, "<").to("#top-left", {
+        x: "-100%",
+        y: "100px"
+    }, "<")
 
-    return tl;
+    tl.add(animate);
+
+    ScrollTrigger.create({
+        animation: tl,
+        trigger: "#main",
+        start: "center center",
+        scrub: true
+    });
 }
+
+// gsap.utils.toArray("#spark-animation svg g").forEach((round) => {
+//     gsap.fromTo(
+//         round,
+//         {
+//             x: 0,
+//             y: 0,
+//             scale: 0.7,
+//         },
+//         {
+//             x: gsap.utils.random(25, 50),
+//             y: gsap.utils.random(25, 50),
+//             duration: 5,
+//             scale: 1,
+//             yoyo: true,
+//             repeat: -1,
+//             repeatRefresh: true,
+//         }
+//     );
+// });
+
+// function SparkAnimation() {
+//     const tl = gsap.timeline();
+
+//     tl.fromTo(
+//         "#spark-animation svg g",
+//         {
+//             opacity: 0,
+//         },
+//         {
+//             opacity: 1,
+//             duration: 1.2,
+//         }
+//     );
+
+//     return tl;
+// }
 
 function aboutCerberus() {
     const tl = gsap.timeline();
@@ -279,8 +313,11 @@ function aboutCerberusLg() {
 
     ScrollTrigger.create({
         animation: tl,
-        trigger: "#about-cerberus",
-        start: "0 50%",
+        trigger: "#about-cerberus ",
+        scrub: 2,
+        start: "top bottom",
+        end: "center center",
+        pinnedContainer: "#about-cerberus",
     });
 }
 
@@ -385,9 +422,119 @@ function crbrusBenefits() {
     ScrollTrigger.create({
         animation: animate,
         trigger: "#crbrus-benefits ",
-        start: "0% 45%",
+        scrub: true,
+        pin: true,
     });
 }
+
+function crbrusBenefitsXl() {
+    const tl = gsap.timeline();
+
+    const animate = gsap
+        .timeline()
+        .fromTo(
+            "#crbrus-benefits .container .section-title",
+            {
+                opacity: 0,
+                y: "100%",
+                skewX: "-15deg",
+            },
+            {
+                opacity: 1,
+                y: "0%",
+                duration: 0.5,
+                skewX: "0",
+            }
+        )
+        .fromTo(
+            "#crbrus-benefits .container .card-wrap div:nth-child(1) img",
+            {
+                opacity: 0,
+                scale: 0,
+                y: 100,
+            },
+            {
+                opacity: 1,
+                scale: 1,
+                duration: 0.5,
+                y: 0,
+            }
+        )
+        .fromTo(
+            "#crbrus-benefits .container .card-wrap div:nth-child(1) h4",
+            {
+                y: 50,
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.4,
+            }
+        )
+        .fromTo(
+            "#crbrus-benefits .container .card-wrap div:nth-child(2) img",
+            {
+                opacity: 0,
+                scale: 0,
+                y: 100,
+            },
+            {
+                opacity: 1,
+                scale: 1,
+                duration: 0.5,
+                y: 0,
+            }
+        )
+        .fromTo(
+            "#crbrus-benefits .container .card-wrap div:nth-child(2) h4",
+            {
+                y: 50,
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.4,
+            }
+        )
+        .fromTo(
+            "#crbrus-benefits .container .card-wrap div:nth-child(3) img",
+            {
+                opacity: 0,
+                scale: 0,
+                y: 100,
+            },
+            {
+                opacity: 1,
+                scale: 1,
+                duration: 0.5,
+                y: 0,
+            }
+        )
+        .fromTo(
+            "#crbrus-benefits .container .card-wrap div:nth-child(3) h4",
+            {
+                y: 50,
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.4,
+            }
+        );
+
+    ScrollTrigger.create({
+        animation: animate,
+        trigger: "#crbrus-benefits ",
+        scrub: true,
+        pin: true,
+        start: "center center"
+    });
+}
+
+
 
 function projectRoadmap() {
     const tl = gsap.timeline();
@@ -441,6 +588,8 @@ function projectRoadmap() {
     ScrollTrigger.create({
         animation: tl,
         trigger: "#project-roadmap",
+        pin: true,
+        scrub: true,
     });
 }
 
@@ -497,12 +646,68 @@ function joinCommunity() {
         trigger: "#join-cerberus",
     });
 }
+function joinCommunityXl() {
+    const tl = gsap.timeline();
+
+    const animation = gsap
+        .timeline()
+        .fromTo(
+            "#join-cerberus .container .section-title",
+            {
+                lineHeight: "175%",
+                opacity: 0,
+                y: "100%",
+            },
+            {
+                lineHeight: "110%",
+                opacity: 1,
+                duration: 0.5,
+                y: "0%",
+            }
+        )
+        .fromTo(
+            "#join-cerberus .container .para",
+            {
+                lineHeight: "175%",
+                opacity: 0,
+                y: "50%",
+            },
+            {
+                lineHeight: "140%",
+                opacity: 1,
+                duration: 0.5,
+                y: "0%",
+            }
+        )
+        .fromTo(
+            "#join-cerberus .container .btn-wrap .btn-fill",
+            {
+                scale: 0,
+                opacity: 0,
+            },
+            {
+                scale: 1,
+                opacity: 1,
+                duration: 0.5,
+            }
+        );
+
+    tl.add(animation);
+
+    ScrollTrigger.create({
+        animation: tl,
+        trigger: "#join-cerberus",
+        markers: true,
+        start: "top 60%",
+        end: "50% center",
+        scrub: true
+    });
+}
 
 ScrollTrigger.matchMedia({
     "(max-width: 1199px)": function () {
         masterTl
             .add(HomeAnimation())
-            .add(SparkAnimation())
             .add(aboutCerberus())
             .add(crbrusBenefits())
             .add(projectRoadmap())
@@ -511,11 +716,11 @@ ScrollTrigger.matchMedia({
     "(min-width: 1200px)": function () {
         masterTl
             .add(HomeAnimation())
-            .add(SparkAnimation())
+            .add(homeBgParallexXl())
             .add(aboutCerberusLg())
-            .add(crbrusBenefits())
+            .add(crbrusBenefitsXl())
             .add(projectRoadmap())
-            .add(joinCommunity());
+            .add(joinCommunityXl());
     },
 });
 

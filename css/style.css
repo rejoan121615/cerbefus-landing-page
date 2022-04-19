@@ -334,6 +334,44 @@ body {
   height: 100%;
   position: relative;
 }
+@media only screen and (min-width: 1200px) {
+  #main {
+    background-image: url("../img/main-section/main-xl-bg.png");
+    overflow-x: hidden;
+  }
+}
+#main #top-right,
+#main #top-left,
+#main #bottom-left,
+#main #bottom-right {
+  display: none;
+}
+@media only screen and (min-width: 1200px) {
+  #main #top-right,
+#main #top-left,
+#main #bottom-left,
+#main #bottom-right {
+    display: block;
+    position: absolute;
+  }
+}
+#main #top-right {
+  right: 0;
+  top: 0;
+}
+#main #top-left {
+  left: 0;
+  top: 0;
+}
+#main #bottom-right {
+  bottom: 0;
+  right: 0;
+}
+#main #bottom-left {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
 header {
   z-index: 1000;
   position: absolute;
@@ -617,6 +655,8 @@ header .nav-wrap .social-bar ul li a:hover span {
     background-color: #a41115;
     padding-top: 10px;
     padding-bottom: 10px;
+    opacity: 0.8;
+    backdrop-filter: blur(5px);
   }
 }
 
@@ -1330,6 +1370,11 @@ footer .container p.para {
 #main {
   position: initial;
   z-index: 100;
+}
+@media only screen and (min-width: 1200px) {
+  #main {
+    position: relative;
+  }
 }
 #main header,
 #main main,
