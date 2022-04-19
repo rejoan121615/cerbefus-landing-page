@@ -351,10 +351,8 @@ function aboutCerberusLg() {
     ScrollTrigger.create({
         animation: tl,
         trigger: "#about-cerberus ",
-        scrub: 2,
-        start: "top bottom",
+        start: "top 90%",
         end: "center center",
-        pinnedContainer: "#about-cerberus",
     });
 }
 
@@ -565,7 +563,6 @@ function crbrusBenefitsXl() {
     ScrollTrigger.create({
         animation: animate,
         trigger: "#crbrus-benefits .container",
-        scrub: true,
         pin: true,
         start: "center center"
     });
@@ -682,7 +679,6 @@ function projectRoadmapXl() {
         animation: tl,
         trigger: "#project-roadmap .container",
         pin: true,
-        scrub: true,
         start: "35% center",
         end: "100%"
     });
@@ -794,7 +790,6 @@ function joinCommunityXl() {
         trigger: "#join-cerberus",
         start: "top 60%",
         end: "50% center",
-        scrub: true
     });
 }
 
