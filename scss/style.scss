@@ -344,8 +344,13 @@ h2.section-title {
     position: relative;
 
     //---------------------- header section  -----------------
-    header {
+    @at-root header {
+        z-index: 1000;
+        position: absolute;
+        left: 0;
+        width: 100%;
         padding-top: 15px;
+        transition: padding 0.5s;
         @include resp($lg) {
             padding-top: 30px;
         }
@@ -370,7 +375,7 @@ h2.section-title {
             display: flex;
             flex-flow: row wrap;
             align-items: center;
-            @include resp ($xl) {
+            @include resp($xl) {
                 width: 255px;
             }
             img {
@@ -379,7 +384,7 @@ h2.section-title {
                     max-width: 256px;
                     transform: translateX(-5px);
                 }
-                @include resp ($xxl) {
+                @include resp($xxl) {
                     margin-top: 10px;
                 }
             }
@@ -424,7 +429,7 @@ h2.section-title {
                 height: 70px;
                 transform: translateX(30px);
             }
-            @include resp ($xxl) {
+            @include resp($xxl) {
                 width: initial;
             }
             .nav,
@@ -558,7 +563,7 @@ h2.section-title {
                             flex-flow: column wrap;
                             justify-content: center;
                             align-items: center;
-                            @include resp ($xl) {
+                            @include resp($xl) {
                                 position: relative;
                             }
                             svg {
@@ -576,7 +581,7 @@ h2.section-title {
                                 text-align: center;
                                 text-transform: capitalize;
                                 color: #ffd600;
-                                @include resp ($xl) {
+                                @include resp($xl) {
                                     font-size: 16px;
                                     position: absolute;
                                     bottom: -20px;
@@ -592,16 +597,25 @@ h2.section-title {
                                 }
                                 span {
                                     display: block;
-                                    @include resp ($xl) {
+                                    @include resp($xl) {
                                         opacity: 1;
                                     }
                                 }
-                                
                             }
                         }
                     }
                 }
             }
+        }
+    }
+    @at-root header.sticky {
+        @include resp($xl) {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: $red;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
     }
     //--------------------- main section  -------------------
