@@ -118,6 +118,87 @@ function HomeAnimation() {
     // })
 }
 
+
+function HomeAnimationXl() {
+    const tl = gsap.timeline();
+
+    // main
+    const animate = gsap
+        .timeline()
+        .to("#main", {
+            opacity: 1,
+            duration: 1.5,
+            delay: 1,
+        })
+        .fromTo(
+            "#main main .container .section-wrap .main-all-content .main-section-header h1",
+            {
+                opacity: 0,
+                y: "100%",
+                skewX: "-15deg",
+            },
+            {
+                opacity: 1,
+                y: "0%",
+                duration: 0.8,
+                stagger: 0.33,
+                skewX: "0",
+            }
+        )
+        .fromTo(
+            "#main main .container .section-wrap .main-highlight-img img",
+            {
+                opacity: 1,
+                clipPath: "circle(0% at 50% 50%)",
+            },
+            {
+                clipPath: "circle(60% at 50% 50%)",
+                duration: 1,
+            }
+        )
+        .from(
+            "#main main .container .section-wrap .main-all-content .para span",
+            {
+                opacity: 0,
+                y: "100%",
+                stagger: 0.25,
+                skewX: "-20deg",
+                duration: 0.8,
+            }
+        )
+        .fromTo(
+            "header",
+            {
+                y: "-100%",
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1.5,
+            },
+            "<"
+        )
+        .fromTo(
+            "#main main .btn-wrap a",
+            {
+                opacity: 0,
+                y: "40px",
+            },
+            {
+                opacity: 1,
+                duration: 0.6,
+                y: "0",
+                onComplete: function () {
+                    document.querySelector("body").style.overflowY = "scroll";
+                }
+            },
+            "<"
+        );
+    tl.add(animate);
+}
+
+
+
 function homeBgParallexXl() {
     const tl = gsap.timeline();
 
@@ -697,7 +778,6 @@ function joinCommunityXl() {
     ScrollTrigger.create({
         animation: tl,
         trigger: "#join-cerberus",
-        markers: true,
         start: "top 60%",
         end: "50% center",
         scrub: true
@@ -715,7 +795,7 @@ ScrollTrigger.matchMedia({
     },
     "(min-width: 1200px)": function () {
         masterTl
-            .add(HomeAnimation())
+            .add(HomeAnimationXl())
             .add(homeBgParallexXl())
             .add(aboutCerberusLg())
             .add(crbrusBenefitsXl())

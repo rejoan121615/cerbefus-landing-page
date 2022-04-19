@@ -8,6 +8,9 @@ html {
     scroll-behavior: smooth;
 }
 
+
+
+
 // responsive
 
 $sm: 576px;
@@ -157,6 +160,11 @@ $width-lists: (
     }
 }
 
+body {
+    @include resp ($xl) {
+        overflow: hidden;
+    }
+}
 // common style
 .container {
     padding-left: 15px;
@@ -649,7 +657,7 @@ h2.section-title {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: $red;
+            background-color: #a41115ab;
             padding-top: 10px;
             padding-bottom: 10px;
             opacity: 0.8;

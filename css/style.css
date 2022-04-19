@@ -165,6 +165,12 @@ h2.section-title {
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  body {
+    overflow: hidden;
+  }
+}
+
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -652,7 +658,7 @@ header .nav-wrap .social-bar ul li a:hover span {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #a41115;
+    background-color: #a41115ab;
     padding-top: 10px;
     padding-bottom: 10px;
     opacity: 0.8;
