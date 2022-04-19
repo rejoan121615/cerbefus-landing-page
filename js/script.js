@@ -108,14 +108,6 @@ function HomeAnimation() {
             "<"
         );
     tl.add(animate);
-
-    // ScrollTrigger.create({
-    //     animation: tl,
-    //     trigger: "#main",
-    //     markers: true,
-    //     scrub: true,
-    //     pin: true
-    // })
 }
 
 
@@ -224,42 +216,6 @@ function homeBgParallexXl() {
     });
 }
 
-// gsap.utils.toArray("#spark-animation svg g").forEach((round) => {
-//     gsap.fromTo(
-//         round,
-//         {
-//             x: 0,
-//             y: 0,
-//             scale: 0.7,
-//         },
-//         {
-//             x: gsap.utils.random(25, 50),
-//             y: gsap.utils.random(25, 50),
-//             duration: 5,
-//             scale: 1,
-//             yoyo: true,
-//             repeat: -1,
-//             repeatRefresh: true,
-//         }
-//     );
-// });
-
-// function SparkAnimation() {
-//     const tl = gsap.timeline();
-
-//     tl.fromTo(
-//         "#spark-animation svg g",
-//         {
-//             opacity: 0,
-//         },
-//         {
-//             opacity: 1,
-//             duration: 1.2,
-//         }
-//     );
-
-//     return tl;
-// }
 
 function aboutCerberus() {
     const tl = gsap.timeline();
@@ -608,7 +564,7 @@ function crbrusBenefitsXl() {
 
     ScrollTrigger.create({
         animation: animate,
-        trigger: "#crbrus-benefits ",
+        trigger: "#crbrus-benefits .container",
         scrub: true,
         pin: true,
         start: "center center"
@@ -668,7 +624,7 @@ function projectRoadmap() {
 
     ScrollTrigger.create({
         animation: tl,
-        trigger: "#project-roadmap",
+        trigger: "#project-roadmap .container",
         pin: true,
         scrub: true,
     });
