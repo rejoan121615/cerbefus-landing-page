@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 #main main .container .section-wrap .main-all-content .main-section-header h1 {
   font-family: "Montserrat", sans-serif;
   font-style: normal;

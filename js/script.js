@@ -1,10 +1,10 @@
-const anchoreTag = document.querySelectorAll("a");
+// const anchoreTag = document.querySelectorAll("a");
 
-anchoreTag.forEach((a) => {
-    a.onclick = (event) => {
-        event.preventDefault();
-    };
-});
+// anchoreTag.forEach((a) => {
+//     a.onclick = (event) => {
+//         event.preventDefault();
+//     };
+// });
 
 // responsive nav bar
 const respBtn = document.querySelector("#resp-nav-btn");
