@@ -409,6 +409,7 @@ header .nav-wrap {
   justify-content: flex-end;
   height: 0px;
   overflow: hidden;
+  transition: height 0.5s;
 }
 @media only screen and (min-width: 1200px) {
   header .nav-wrap {
@@ -440,6 +441,7 @@ header .nav-wrap .nav {
   width: 100%;
   max-width: 400px;
   height: 290px;
+  justify-content: space-between;
 }
 @media only screen and (min-width: 1200px) {
   header .nav-wrap .nav {
@@ -619,17 +621,32 @@ header .nav-wrap .social-bar ul li a:hover span {
 }
 
 #main main .container {
-  padding-top: 50px;
+  padding-top: 130px;
   padding-bottom: 50px;
+}
+@media only screen and (min-width: 992px) {
+  #main main .container {
+    padding-top: 160px;
+  }
 }
 @media only screen and (min-width: 1200px) {
   #main main .container {
-    padding-top: 100px;
+    padding-top: 240px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #main main .container {
+    padding-top: 280px;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  #main main .container {
+    padding-top: 170px;
   }
 }
 @media only screen and (min-width: 1800px) {
   #main main .container {
-    padding-top: 150px;
+    padding-top: 270px;
   }
 }
 #main main .container .section-wrap {

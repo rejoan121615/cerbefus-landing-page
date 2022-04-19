@@ -359,6 +359,7 @@ h2.section-title {
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
+            
             @include resp($xl) {
                 // display: grid;
                 // grid-template-columns: 1fr 2fr;
@@ -421,6 +422,7 @@ h2.section-title {
             justify-content: flex-end;
             height: 0px;
             overflow: hidden;
+            transition:  height 0.5s;
             @include resp($xl) {
                 flex-flow: row wrap;
                 justify-content: space-between;
@@ -450,6 +452,7 @@ h2.section-title {
                 width: 100%;
                 max-width: 400px;
                 height: 290px;
+                justify-content: space-between;
                 @include resp($xl) {
                     height: initial;
                     width: 100%;
@@ -621,17 +624,24 @@ h2.section-title {
     //--------------------- main section  -------------------
     main {
         .container {
-            padding-top: 50px;
+            padding-top: 130px;
             padding-bottom: 50px;
+            @include resp ($lg) {
+                padding-top: 160px;
+            }
             @include resp($xl) {
                 // padding-top: 125px;
-                padding-top: 100px;
+                padding-top: 240px;
             }
             @include resp($xxl) {
                 // padding-top: 150px;
+                padding-top: 280px;
+            }
+            @include resp (1500px) {
+                padding-top: 170px;
             }
             @include resp($mxl) {
-                padding-top: 150px;
+                padding-top: 270px;
             }
             .section-wrap {
                 display: flex;
