@@ -165,12 +165,6 @@ h2.section-title {
   }
 }
 
-@media only screen and (min-width: 1200px) {
-  body {
-    overflow: hidden;
-  }
-}
-
 .container {
   padding-left: 15px;
   padding-right: 15px;

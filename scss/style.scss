@@ -162,7 +162,7 @@ $width-lists: (
 
 body {
     @include resp ($xl) {
-        overflow: hidden;
+        // overflow: hidden;
     }
 }
 // common style

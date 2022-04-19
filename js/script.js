@@ -624,9 +624,67 @@ function projectRoadmap() {
 
     ScrollTrigger.create({
         animation: tl,
+        trigger: "#project-roadmap",
+        pin: true,
+        scrub: true,
+    });
+}
+function projectRoadmapXl() {
+    const tl = gsap.timeline();
+
+    const animate = gsap.timeline().fromTo(
+        "#project-roadmap .container .section-title",
+        {
+            opacity: 0,
+            y: "100%",
+            skewX: "-15deg",
+        },
+        {
+            opacity: 1,
+            y: "0%",
+            duration: 0.8,
+            skewX: "0",
+        }
+    );
+
+    gsap.utils
+        .toArray("#project-roadmap .container .roadmap li")
+        .forEach((item, index) => {
+            animate.add(
+                gsap
+                    .timeline()
+                    .from(
+                        `#project-roadmap .container .roadmap li:nth-child(${
+                            1 + index
+                        })`,
+                        {
+                            opacity: 0,
+                            y: "-25px",
+                            duration: 0.4,
+                        }
+                    )
+                    .from(
+                        `#project-roadmap .container .roadmap li:nth-child(${
+                            1 + index
+                        }) .line`,
+                        {
+                            opacity: 0,
+                            y: "-45%",
+                            duration: 0.4,
+                        }
+                    )
+            );
+        });
+
+    tl.add(animate);
+
+    ScrollTrigger.create({
+        animation: tl,
         trigger: "#project-roadmap .container",
         pin: true,
         scrub: true,
+        start: "35% center",
+        end: "100%"
     });
 }
 
@@ -755,7 +813,7 @@ ScrollTrigger.matchMedia({
             .add(homeBgParallexXl())
             .add(aboutCerberusLg())
             .add(crbrusBenefitsXl())
-            .add(projectRoadmap())
+            .add(projectRoadmapXl())
             .add(joinCommunityXl());
     },
 });
