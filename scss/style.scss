@@ -889,11 +889,17 @@ h2.section-title {
 // ------------ crbrus benefits  ------------
 #crbrus-benefits {
     position: relative;
+    @include resp ($xl) {
+        padding-top: 100px;
+    }
     .container {
         padding-top: 63px;
         padding-bottom: 77px;
         position: relative;
         z-index: 300;
+        @include resp ($xl) {
+            padding-top: 0px;
+        }
         .section-title {
             text-align: center;
         }
@@ -1098,6 +1104,9 @@ h2.section-title {
     padding-bottom: 40px;
     @include resp($md) {
         padding-top: 60px;
+    }
+    @include resp ($xl) {
+        padding-top: 100px;
     }
     .container {
         position: relative;

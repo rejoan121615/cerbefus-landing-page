@@ -919,11 +919,21 @@ header .nav-wrap .social-bar ul li a:hover span {
 #crbrus-benefits {
   position: relative;
 }
+@media only screen and (min-width: 1200px) {
+  #crbrus-benefits {
+    padding-top: 100px;
+  }
+}
 #crbrus-benefits .container {
   padding-top: 63px;
   padding-bottom: 77px;
   position: relative;
   z-index: 300;
+}
+@media only screen and (min-width: 1200px) {
+  #crbrus-benefits .container {
+    padding-top: 0px;
+  }
 }
 #crbrus-benefits .container .section-title {
   text-align: center;
@@ -1165,6 +1175,11 @@ header .nav-wrap .social-bar ul li a:hover span {
 @media only screen and (min-width: 768px) {
   #join-cerberus {
     padding-top: 60px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #join-cerberus {
+    padding-top: 100px;
   }
 }
 #join-cerberus .container {

@@ -1,11 +1,3 @@
-// const anchoreTag = document.querySelectorAll("a");
-
-// anchoreTag.forEach((a) => {
-//     a.onclick = (event) => {
-//         event.preventDefault();
-//     };
-// });
-
 // responsive nav bar
 const respBtn = document.querySelector("#resp-nav-btn");
 
@@ -23,13 +15,6 @@ respBtn.onclick = function () {
 
 // gsap file
 gsap.registerPlugin(ScrollTrigger);
-
-gsap.set(
-    " #main .section-wrap .main-all-content .main-section-header h1, #main .btn-wrap a , #main",
-    {
-        opacity: 0,
-    }
-);
 
 // master timeline
 const masterTl = gsap.timeline();
@@ -110,7 +95,6 @@ function HomeAnimation() {
     tl.add(animate);
 }
 
-
 function HomeAnimationXl() {
     const tl = gsap.timeline();
 
@@ -120,7 +104,6 @@ function HomeAnimationXl() {
         .to("#main", {
             opacity: 1,
             duration: 1.5,
-            delay: 1,
         })
         .fromTo(
             "#main main .container .section-wrap .main-all-content .main-section-header h1",
@@ -182,29 +165,92 @@ function HomeAnimationXl() {
                 y: "0",
                 onComplete: function () {
                     document.querySelector("body").style.overflowY = "scroll";
-                }
+                },
+            },
+            "<"
+        )
+
+        .fromTo(
+            "#bottom-left",
+            {
+                x: "-100%",
+            },
+            {
+                x: "0%",
+                duration: 2,
+            },
+            "<"
+        )
+        .fromTo(
+            "#bottom-right",
+            {
+                x: "100%",
+            },
+            {
+                x: "0%",
+                duration: 2,
+            },
+            "<"
+        )
+        .fromTo(
+            "#top-right",
+            {
+                x: "100%",
+            },
+            {
+                x: "0%",
+                duration: 2,
+            },
+            "<"
+        )
+        .fromTo(
+            "#top-left",
+            {
+                x: "-100%",
+            },
+            {
+                x: "0%",
+                duration: 2,
             },
             "<"
         );
+
     tl.add(animate);
 }
-
-
 
 function homeBgParallexXl() {
     const tl = gsap.timeline();
 
-    const animate = gsap.timeline().to("#bottom-left", {
-        x: '-70%',
-    }).to("#bottom-right", {
-        x: "100%"
-    }, "<").to("#top-right", {
-        x: "100%",
-        y: "100px"
-    }, "<").to("#top-left", {
-        x: "-100%",
-        y: "100px"
-    }, "<")
+    const animate = gsap
+        .timeline()
+        .to("#bottom-left", {
+            x: "-100%",
+            duration: 2,
+        })
+        .to(
+            "#bottom-right",
+            {
+                x: "100%",
+                duration: 2
+            },
+            "<"
+        )
+        .to(
+            "#top-right",
+            {
+                x: "100%",
+                duration: 2
+            },
+            "<"
+        )
+        .to(
+            "#top-left",
+            {
+                x: "-100%",
+                duration: 2
+            },
+            "<"
+        );
 
     tl.add(animate);
 
@@ -212,10 +258,11 @@ function homeBgParallexXl() {
         animation: tl,
         trigger: "#main",
         start: "center center",
-        scrub: true
+        scrub: true,
+        markers: true,
     });
 }
-
+homeBgParallexXl()
 
 function aboutCerberus() {
     const tl = gsap.timeline();
@@ -564,11 +611,9 @@ function crbrusBenefitsXl() {
         animation: animate,
         trigger: "#crbrus-benefits .container",
         pin: true,
-        start: "center center"
+        start: "center center",
     });
 }
-
-
 
 function projectRoadmap() {
     const tl = gsap.timeline();
@@ -680,7 +725,7 @@ function projectRoadmapXl() {
         trigger: "#project-roadmap .container",
         pin: true,
         start: "35% center",
-        end: "100%"
+        end: "100%",
     });
 }
 
@@ -805,11 +850,11 @@ ScrollTrigger.matchMedia({
     "(min-width: 1200px)": function () {
         masterTl
             .add(HomeAnimationXl())
-            .add(homeBgParallexXl())
-            .add(aboutCerberusLg())
-            .add(crbrusBenefitsXl())
-            .add(projectRoadmapXl())
-            .add(joinCommunityXl());
+            // .add(homeBgParallexXl())
+            // .add(aboutCerberusLg())
+            // .add(crbrusBenefitsXl())
+            // .add(projectRoadmapXl())
+            // .add(joinCommunityXl())
     },
 });
 
